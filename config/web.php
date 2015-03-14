@@ -12,6 +12,7 @@ $config = [
             'rules' => [
             // "<controller:\w+>/<action:\w+>" => "<controller>/<action>",
                 // "<action:\w+>" => "site/<action>",
+                "media/image/<id:\d+>/<sizeX:\d+>x<sizeY:\d+>.<ext:\w+>" => "media/image",
             ],
             // ...
         ],
@@ -42,6 +43,12 @@ $config = [
             ],
         ],
         'db' => require(__DIR__ . '/db.php'),
+        'user' => [
+            'identityClass' => 'app\models\User', // User must implement the IdentityInterface
+            'enableAutoLogin' => true,
+            // 'loginUrl' => ['user/login'],
+            // ...
+        ]
     ],
     'params' => $params,
 ];

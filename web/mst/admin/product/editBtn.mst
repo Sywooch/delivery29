@@ -1,0 +1,1 @@
+<button onclick="deleteProduct({{id}})" class="btn btn-danger">X</button>
