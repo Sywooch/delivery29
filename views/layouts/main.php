@@ -26,31 +26,35 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
         <?php
             NavBar::begin([
-                'brandLabel' => 'Что пишут',
+                'brandLabel' => 'Доставка 29',
                 'brandUrl' => Yii::$app->homeUrl,
                 'options' => [
                     'class' => 'navbar-inverse navbar-top',
                 ],
             ]);
-            echo Nav::widget([
-                'options' => ['class' => 'navbar-nav navbar-right'],
-                'items' => [
-                    ['label' => 'About', 'url' => ['/site/about']],
-                ],
-            ]);
+            // echo Nav::widget([
+            //     'options' => ['class' => 'navbar-nav navbar-right'],
+            //     'items' => [
+            //         ['label' => 'About', 'url' => ['/site/about']],
+            //     ],
+            // ]);
             NavBar::end();
         ?>
         <?= $content ?>
 
     <footer class="footer">
         <div class="container">
-            <p class="pull-left">&copy; Посты из соц сетей на карте <?= date('Y') ?></p>
-            <p class="pull-right"><?= Yii::powered() ?></p>
+            <p class="pull-left">&copy; Доставка еды из Макдональдс Старфудс в Архангельске <?= date('Y') ?></p>
+            
         </div>
     </footer>
 
 <?php $this->endBody() ?>
 </body>
 <script src="/js/mustache.min.js"></script>
+<script src="/js/chart.js"></script>
+<script>
+    rewriteChart();
+</script>
 </html>
 <?php $this->endPage() ?>

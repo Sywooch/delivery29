@@ -96,3 +96,39 @@ a.desc:after {
     max-width: 100%;
     width: 100%;
 }
+
+.price-text
+{
+    font-size: 19pt !important;
+    position: relative;
+    float: right;
+    margin-top: -20px;
+    margin-right: -12px;
+    margin-bottom: -10pt
+}
+
+.bold-text
+{
+    font-weight: bold;
+}
+
+.btn-wide
+{
+    width: 100%;
+}
+
+.btn-space-top
+{
+    margin-top: 5px;
+}
+
+.chart-table
+{
+    width: 100%;
+}
+
+.empty-chart
+{
+    text-align: center;
+    padding: 5pt 0 5pt 0;
+}
