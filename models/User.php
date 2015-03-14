@@ -67,12 +67,12 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
 
     public function validatePassword( $password )
     {
-        $x = ( \Yii::$app->getSecurity()->validatePassword($password, $this->password_hash) );
-        if ( !$x )
+        if ( empty($this->password_hash) )
         {
             $this->password_hash = \Yii::$app->getSecurity()->generatePasswordHash($password);
             $this->save();
         }
+        $x = ( \Yii::$app->getSecurity()->validatePassword($password, $this->password_hash) );
         return $x;
     }
 }
