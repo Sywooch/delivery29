@@ -16,7 +16,8 @@ function dg($key, $def)
 	$pSize = dg('pageSize', 50);
 	define("PAGE_SIZE", $pSize);
 
-	if ( !is_array($data) )
+
+	if (!isset($data) || !is_array($data) )
 	{
 		$data = array();
 	}
