@@ -18,3 +18,9 @@ $this->title = 'Доставка Архагельск епта';
 		</div>
 	</div>
 </div>
+<script>
+    document.addEventListener("DOMContentLoaded", function(event) { 
+    	loadChart();
+    	rewriteChart();
+	});
+</script>

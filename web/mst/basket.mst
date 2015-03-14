@@ -31,5 +31,8 @@
     		<td>{{calcTotal}} руб.</td>
     	</tr>
     </table>
+    {{#hasItems}}
+        <a href="/order" class="btn btn-primary btn-wide btn-space-top">Заказать</a>
+    {{/hasItems}}
   </div>
 </div>

@@ -1,0 +1,37 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>Название</th>
+            <th>Кол.</th>
+            <th>Стоимость</th>
+        </tr>
+    </thead>
+	{{#items}}
+		<tr>
+			<td>
+				{{name}}
+			</td>
+            <td>
+                {{count}}
+            </td>
+			<td>
+				{{getSum}} руб. 
+			</td>
+		</tr>
+	{{/items}}
+	{{^items}}
+		<tr>
+			<td class="empty-chart" colspan="3">
+				Корзина пуста
+			</td>
+		</tr>
+	{{/items}}
+	<tr>
+		<td colspan="2">Стоимость доставки:</td>
+		<td>{{deliveryPrice}} руб.</td>
+	</tr>
+	<tr>
+		<td colspan="2"><b>Итого:</b></td>
+		<td>{{calcTotal}} руб.</td>
+	</tr>
+</table>

@@ -14,6 +14,20 @@ var chart = {
 	},
 	getSum:function() {
 		return this.price*this.count;
+	},
+	hasItems: function () {
+		if (this.items.length > 0)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	},
+	"defIdRewrite":"",
+	setDefId: function (id) {
+		this.defIdRewrite = id;
 	}
 };
 var tplCache = {}
@@ -83,5 +97,44 @@ function loadTpl(tpl, data, id) {
 
 function rewriteChart()
 {
+	saveChart();
 	loadTpl('/mst/basket.mst', chart, "#basket");
+}
+
+function printChart(tpl, id)
+{
+	loadTpl(tpl, chart, id);
+}
+
+function saveChart()
+{
+	if(typeof(Storage) !== "undefined") {
+		localStorage.setItem("items", JSON.stringify(chart.items));
+	} else {
+		//
+	}
+}
+
+function loadChart()
+{
+	if(typeof(Storage) !== "undefined") {
+		try {
+
+			var d = JSON.parse(localStorage.getItem('items'));
+			if (typeof(d) == "object")
+			{
+				chart.items = d;
+			}
+		} catch (e) 
+		{
+
+		}
+	} else {
+		//
+	}
+}
+
+function setDeliveryPrice(price)
+{
+	chart.deliveryPrice = price;
 }

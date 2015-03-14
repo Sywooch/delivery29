@@ -53,8 +53,5 @@ AppAsset::register($this);
 </body>
 <script src="/js/mustache.min.js"></script>
 <script src="/js/chart.js"></script>
-<script>
-    rewriteChart();
-</script>
 </html>
 <?php $this->endPage() ?>
