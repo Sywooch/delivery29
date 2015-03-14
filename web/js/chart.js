@@ -121,7 +121,7 @@ function loadChart()
 		try {
 
 			var d = JSON.parse(localStorage.getItem('items'));
-			if (typeof(d) == "object")
+			if (typeof(d) == "object" && d.length > 0)
 			{
 				chart.items = d;
 			}
