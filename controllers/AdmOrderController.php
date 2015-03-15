@@ -10,7 +10,7 @@ class AdmOrderController extends Controller
 {
     public $layout = 'admin';
     public $model = "app\models\Order";
-    public $baseUrl = "/admorder";
+    public $baseUrl = "/adm-order";
     public function behaviors()
     {
          return [

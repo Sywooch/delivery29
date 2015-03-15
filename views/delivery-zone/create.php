@@ -1,6 +1,6 @@
 <?php
 $model = "app\\models\\DeliveryZone";
-$baseUrl = "/deliveryzone";
+$baseUrl = "/delivery-zone";
 
 function dg($key, $def)
 {
