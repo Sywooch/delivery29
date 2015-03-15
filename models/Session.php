@@ -67,7 +67,7 @@ class Session extends \yii\db\ActiveRecord
         {
             self::$_current = self::getSession();
         }
-        return $_current;
+        return self::$_current;
     }
 
     public static function createSession()

@@ -58,7 +58,7 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     {
         if (parent::beforeSave($insert)) {
             if ($this->isNewRecord) {
-                $this->auth_key = Yii::$app->getSecurity()->generateRandomString();
+                $this->auth_key = \Yii::$app->getSecurity()->generateRandomString();
             }
             return true;
         }
@@ -74,5 +74,13 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
         }
         $x = ( \Yii::$app->getSecurity()->validatePassword($password, $this->password_hash) );
         return $x;
+    }
+
+    public function rules()
+    {
+        return [
+            [['username'], 'required'],
+            [['username'], 'email'],
+        ];
     }
 }

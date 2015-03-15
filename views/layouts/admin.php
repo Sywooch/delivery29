@@ -36,7 +36,9 @@ AppAsset::register($this);
                 'options' => ['class' => 'navbar-nav navbar-right'],
                 'items' => [
                     ['label' => 'Все товары', 'url' => ['/admin']],
-                    ['label' => 'Добавить товар', 'url' => ['/admin/create']],
+                    ['label' => 'Зоны доставки', 'url' => ['/deliveryzone']],
+                    ['label' => 'Пользователь', 'url' => ['/user']],
+                    ['label' => 'Заказы', 'url' => ['/admorder']],
                 ],
             ]);
             NavBar::end();

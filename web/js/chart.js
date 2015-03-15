@@ -28,6 +28,10 @@ var chart = {
 	"defIdRewrite":"",
 	setDefId: function (id) {
 		this.defIdRewrite = id;
+	},
+	removeAll:function () {
+		this.items = [];
+		saveChart();
 	}
 };
 var tplCache = {}
