@@ -1,4 +1,3 @@
-<?php?>
 <div class="container">
 	<h1>Управление параметрами</h1>
 	<p>
