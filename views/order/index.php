@@ -1,3 +1,7 @@
+<?php
+/* @var $this yii\web\View */
+$this->title = 'Оформление заказа';
+?>
 <div class="container">
 	<h1>Оформить заказ</h1>
 	<hr>
