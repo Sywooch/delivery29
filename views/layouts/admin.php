@@ -39,6 +39,7 @@ AppAsset::register($this);
                     ['label' => 'Зоны доставки', 'url' => ['/delivery-zone']],
                     ['label' => 'Пользователь', 'url' => ['/user']],
                     ['label' => 'Заказы', 'url' => ['/adm-order']],
+                    ['label' => 'Параметры', 'url' => ['/params']],
                 ],
             ]);
             NavBar::end();

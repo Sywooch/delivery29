@@ -1,0 +1,1 @@
+<input id="edit{{name}}" value="{{value}}"><button class="btn btn-xs" onclick="createParam('{{name}}', $('#edit{{name}}').val())">S</button>
