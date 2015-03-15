@@ -1,0 +1,6 @@
+{{#active}}
+	<button class="btn btn-xs btn-primary" onclick="deactivate({{itemId}})">Активно</button>
+{{/active}}
+{{^active}}
+	<button class="btn btn-xs btn-default" onclick="activate({{itemId}})">Не активно</button>
+{{/active}}

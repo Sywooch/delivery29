@@ -1,0 +1,2 @@
+<a href="{{url}}/edit/?id={{id}}" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil"></span></a>
+<button onclick="deleteItem({{id}})" class="btn btn-xs btn-danger">X</button>

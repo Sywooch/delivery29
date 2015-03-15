@@ -5,3 +5,5 @@ yii
 yii.bat
 composer.lock
 requirements.php
+web/media
+web/assets

@@ -9,9 +9,21 @@ $config = [
     'components' => [
         'urlManager' => [
             'enablePrettyUrl' => true,
+            'showScriptName' => false,
             'rules' => [
             // "<controller:\w+>/<action:\w+>" => "<controller>/<action>",
                 // "<action:\w+>" => "site/<action>",
+                "media/image/<id:\d+>/<sizeX:\d+>x<sizeY:\d+>.<ext:\w+>" => "media/image",
+                [
+                    'pattern' => 'zone',
+                    'route' => 'static-page',
+                    'defaults' => ['page' => "zone"],
+                ],
+                [
+                    'pattern' => 'work',
+                    'route' => 'static-page',
+                    'defaults' => ['page' => "work"],
+                ],
             ],
             // ...
         ],
@@ -42,6 +54,23 @@ $config = [
             ],
         ],
         'db' => require(__DIR__ . '/db.php'),
+        'user' => [
+            'identityClass' => 'app\models\User', // User must implement the IdentityInterface
+            'enableAutoLogin' => true,
+            // 'loginUrl' => ['user/login'],
+            // ...
+        ],
+        'mail' => [
+             'class' => 'yii\swiftmailer\Mailer',
+             'transport' => [
+                 'class' => 'Swift_SmtpTransport',
+                 'host' => 'smtp.yandex.ru',  // e.g. smtp.mandrillapp.com or smtp.gmail.com
+                 'username' => 'no-reply@dostavka29.ru',
+                 'password' => 'q12we34rfv',
+                 'port' => '465', // Port 25 is a very common port too
+                 'encryption' => 'ssl', // It is often used, check your provider or mail server specs
+             ],
+         ],
     ],
     'params' => $params,
 ];

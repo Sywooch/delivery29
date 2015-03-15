@@ -7,6 +7,7 @@ use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\Product;
+use app\models\Session;
 
 class SiteController extends Controller
 {
@@ -32,7 +33,7 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-    	$arProduct = Product::find()->all();
+        $arProduct = Product::getForCat(1);
         return $this->render('index', array('arProduct'=>$arProduct) );
     }
 }
