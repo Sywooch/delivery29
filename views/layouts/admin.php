@@ -19,7 +19,6 @@ AppAsset::register($this);
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
-    <script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 </head>
 <body>
 
@@ -35,11 +34,12 @@ AppAsset::register($this);
             echo Nav::widget([
                 'options' => ['class' => 'navbar-nav navbar-right'],
                 'items' => [
-                    ['label' => 'Все товары', 'url' => ['/admin']],
+                    ['label' => 'Все товары', 'url' => ['/adm-product']],
                     ['label' => 'Зоны доставки', 'url' => ['/delivery-zone']],
                     ['label' => 'Пользователь', 'url' => ['/user']],
                     ['label' => 'Заказы', 'url' => ['/adm-order']],
                     ['label' => 'Параметры', 'url' => ['/params']],
+                    ['label' => 'Катагории товаров', 'url' => ['/adm-category']],
                 ],
             ]);
             NavBar::end();

@@ -14,6 +14,16 @@ $config = [
             // "<controller:\w+>/<action:\w+>" => "<controller>/<action>",
                 // "<action:\w+>" => "site/<action>",
                 "media/image/<id:\d+>/<sizeX:\d+>x<sizeY:\d+>.<ext:\w+>" => "media/image",
+                [
+                    'pattern' => 'zone',
+                    'route' => 'static-page',
+                    'defaults' => ['page' => "zone"],
+                ],
+                [
+                    'pattern' => 'work',
+                    'route' => 'static-page',
+                    'defaults' => ['page' => "work"],
+                ],
             ],
             // ...
         ],

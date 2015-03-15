@@ -1,7 +1,6 @@
 <?php
 
-$model = "app\models\DeliveryZone";
-$url = "/delivery-zone";
+// $model = "app\models\DeliveryZone";
 
 function dg($key, $def)
 {
@@ -14,9 +13,9 @@ function dg($key, $def)
 		return $_GET[$ke];
 	}
 }
-	$sort = dg('sort', 'sort');
+	$sort = dg('sort', 'created_at');
 	$page = dg('page', 0);
-	$sortType = dg('sortType', 'ASC');
+	$sortType = dg('sortType', 'DESC');
 	$pSize = dg('pageSize', 50);
 	define("PAGE_SIZE", $pSize);
 
@@ -28,7 +27,7 @@ function dg($key, $def)
 	$head = array_keys($schema['columns']);
 	$head[] = "-";
 ?>
-<a href="<?php echo $url?>/create" class="btn btn-primary">+</a>
+<a href="<?php echo $baseUrl?>/create" class="btn btn-primary">+</a>
 <table class="table">
 	<thead>
 		<tr>
@@ -56,6 +55,6 @@ function dg($key, $def)
 </table>
 </div>
 <script>
-	var baseUrl = '<?php echo $url?>';
+	var baseUrl = '<?php echo $baseUrl?>';
 </script>
 <script src="/js/admin/panel/model.js"></script>

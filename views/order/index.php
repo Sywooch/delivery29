@@ -7,17 +7,6 @@
 				<p>Подождите корзина загружается....</p>
 			</div>
 			<form id="order-from" onsubmit="makeOrder(); return false;" class="form-horizontal">
-			  <div class="form-group">
-			    <label for="address" class="col-sm-3 control-label">Зона доставки</label>
-			    <div class="col-sm-9">
-			    	<?php foreach( $deliveryZones as $zone ):?>
-			    		<label>
-			    			<input onclick="setDeliveryPrice(<?php echo $zone->delivery_price?>); printChart('/mst/basket/order.mst', '#chart-data');" type="radio" name="deliveryZone" value="<?php echo $zone->id?>">
-			    			<?php echo $zone->name;?>
-			    		</label>
-			    	<?php endforeach;?>
-			    </div>
-			  </div>
 			  <div class="form-group" id="address">
 			    <label for="address" class="col-sm-3 control-label">Адрес</label>
 			    <div class="col-sm-9">
@@ -57,6 +46,9 @@
     document.addEventListener("DOMContentLoaded", function(event) { 
     	loadChart();
     	printChart('/mst/basket/order.mst', '#chart-data');
+    	chart.defaultRewrite = function () {
+	    	printChart('/mst/basket/order.mst', '#chart-data');
+    	};
 		$.fn.serializeObject = function()
 		{
 		    var o = {};
@@ -105,6 +97,7 @@
 			$('.js-error-message').text("");
 			$('.has-error').removeClass("has-error");
 			var data = $('#order-from').serializeObject();
+			data.zone_id = $('#delivery-zone').val();
 			for (var x in data)
 			{
 				if (!validate(x, data[x], data))

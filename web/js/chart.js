@@ -1,10 +1,7 @@
-var deliveryPrice = 150;
-
 var chart = {
 	items:[],
-	"deliveryPrice": deliveryPrice,
 	calcTotal: function () {
-		var total = this.deliveryPrice
+		var total = chart.getDeliveryPrice();
 		for (x in this.items)
 		{
 			var s = this.items[x].price*this.items[x].count;
@@ -32,7 +29,48 @@ var chart = {
 	removeAll:function () {
 		this.items = [];
 		saveChart();
-	}
+	},
+	"zones":deliveryZones,
+	"activeZone":getSaveDeliveryZone(),
+	getActiveZone: function ()
+	{
+		if (this.activeZone == false)
+		{
+			for (var x in chart.zones)
+			{
+				return chart.zones[x];
+			}
+		}
+		else
+		{
+			for (var x in chart.zones)
+			{
+				if (chart.zones[x].id == chart.activeZone)
+				{
+					return chart.zones[x];
+				}
+			}
+			//Hotfix zone not found
+			chart.activeZone = false;
+			return chart.getActiveZone();
+		}
+	},
+	isActiveZone: function () 
+	{
+		var activeZone = chart.getActiveZone();
+		return activeZone.id == this.id;
+	},
+	getDeliveryPrice: function () {
+		var activeZone = chart.getActiveZone();
+		return activeZone.delivery_price;
+	},
+	setActiveZone:function(id)
+	{
+		chart.activeZone = id;
+		chart.defaultRewrite();
+		saveDeliveryZone(id);
+	},
+	defaultRewrite:function () {}
 };
 var tplCache = {}
 
@@ -136,6 +174,47 @@ function loadChart()
 	} else {
 		//
 	}
+}
+
+function getSaveDeliveryZone()
+{
+	if(typeof(Storage) !== "undefined") {
+		try {
+			var z = localStorage.getItem("deliveryZone");
+			if (z != null)
+			{
+				return z;
+			}
+			else
+			{
+				return false;
+			}
+		} catch (e) 
+		{
+			return false;
+		}
+	} else {
+		//
+	}
+
+	return false;
+}
+
+
+function saveDeliveryZone(id)
+{
+	if(typeof(Storage) !== "undefined") {
+		try {
+			localStorage.setItem("deliveryZone", id);
+		} catch (e) 
+		{
+			return false;
+		}
+	} else {
+		//
+	}
+
+	return false;
 }
 
 function setDeliveryPrice(price)

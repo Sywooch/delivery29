@@ -1,13 +1,20 @@
 <?php
 /* @var $this yii\web\View */
-$this->title = 'Доставка Архагельск епта';
+$this->title = 'Доставка Архагельск';
 ?>
 <div class="container">
 	<div class="row">
 		<div class="col-md-9">
 		<?php 
-			foreach ($arProduct as $product) {
-				echo $this->render('product', array('data'=>$product));
+			if (!empty($arProduct))
+			{
+				foreach ($arProduct as $product) {
+					echo $this->render('../catalog/product', array('data'=>$product));
+				}
+			}
+			else
+			{
+				echo $this->render('../catalog/no-items');
 			}
 		?>
 		</div>
@@ -22,5 +29,6 @@ $this->title = 'Доставка Архагельск епта';
     document.addEventListener("DOMContentLoaded", function(event) { 
     	loadChart();
     	rewriteChart();
+    	chart.defaultRewrite = function () { rewriteChart(); }
 	});
 </script>

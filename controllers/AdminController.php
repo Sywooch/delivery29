@@ -57,34 +57,7 @@ class AdminController extends Controller
 
     public function actionIndex()
     {
-    	echo $this->render('panel');
-    }
-
-    public function actionCreate()
-    {
-        if (isset($_POST['data']))
-        {
-            $product = new Product;
-            $product->attributes = ($_POST['data']);
-            if ($product->validate() && $product->save())
-            {
-                echo $this->render('ProductForm', array('success'=>$product->id));
-            }
-            else
-            {
-                echo $this->render('ProductForm', array('error'=>$product->getErrors(), 'data'=>$_POST['data']));
-            }
-        }
-        else
-        {
-            echo $this->render('ProductForm');
-        }
-    }
-
-    public function actionDelete( $id )
-    {
-        $product = Product::find()->where(['id'=>$id])->one()->delete();
-        echo $this->render('json', array('status'=>'ok'));
+    	echo $this->render('panel', ['data'=>ParamsController::getData()]);
     }
 
     public function actionLogin(  )

@@ -19,7 +19,6 @@ AppAsset::register($this);
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
-    <script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 </head>
 <body>
 
@@ -32,12 +31,14 @@ AppAsset::register($this);
                     'class' => 'navbar-inverse navbar-top',
                 ],
             ]);
-            // echo Nav::widget([
-            //     'options' => ['class' => 'navbar-nav navbar-right'],
-            //     'items' => [
-            //         ['label' => 'About', 'url' => ['/site/about']],
-            //     ],
-            // ]);
+            echo Nav::widget([
+                'options' => ['class' => 'navbar-nav navbar-right'],
+                'items' => [
+                    ['label' => 'Еда', 'url' => ['/']],
+                    ['label' => 'Зоны доставки', 'url' => ['/zone']],
+                    ['label' => 'Режим работы', 'url' => ['/work']],
+                ],
+            ]);
             NavBar::end();
         ?>
         <?= $content ?>
@@ -50,8 +51,9 @@ AppAsset::register($this);
     </footer>
 
 <?php $this->endBody() ?>
-</body>
 <script src="/js/mustache.min.js"></script>
+<?php echo $this->render('delivery-zone')?>
 <script src="/js/chart.js"></script>
+</body>
 </html>
 <?php $this->endPage() ?>

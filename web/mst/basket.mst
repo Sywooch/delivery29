@@ -14,25 +14,30 @@
     				{{getSum}} руб. 
     			</td>
     		</tr>
-    	{{/items}}
-    	{{^items}}
-    		<tr>
-    			<td class="empty-chart" colspan="2">
-    				Корзина пуста
-    			</td>
-    		</tr>
-    	{{/items}}
-    	<tr>
-    		<td>Стоимость доставки:</td>
-    		<td>{{deliveryPrice}} руб.</td>
-    	</tr>
-    	<tr>
-    		<td><b>Итого:</b></td>
-    		<td>{{calcTotal}} руб.</td>
-    	</tr>
+        {{/items}}
+        {{#hasItems}}
+        <tr>
+            <td colspan="2">
+                <hr>
+                <a href="/order" class="btn btn-primary btn-wide btn-space-top">Заказать {{calcTotal}} руб.</a>
+            </td>
+        <tr>
+            <td colspan="2">
+                {{#zones}}
+                <button onclick="chart.setActiveZone({{id}})" class="{{#isActiveZone}}btn-success{{/isActiveZone}}{{^isActiveZone}}btn-default{{/isActiveZone}} btn btn-xs btn-wide btn-space-top">
+                    Доставка в {{name_to}} <span>{{delivery_price}} руб.</span>
+                </button>
+                {{/zones}}
+            </td>
+        </tr>
+        {{/hasItems}}
+        {{^items}}
+            <tr>
+                <td class="empty-chart" colspan="2">
+                    Корзина пуста
+                </td>
+            </tr>
+        {{/items}}
     </table>
-    {{#hasItems}}
-        <a href="/order" class="btn btn-primary btn-wide btn-space-top">Заказать</a>
-    {{/hasItems}}
   </div>
 </div>

@@ -29,8 +29,8 @@ class DeliveryZone extends \yii\db\ActiveRecord
     {
         return [
             [['delivery_price'], 'number'],
-            [['active'], 'integer'],
-            [['name'], 'string', 'max' => 255]
+            [['active', 'sort'], 'integer'],
+            [['name','name_to'], 'string', 'max' => 255]
         ];
     }
 
@@ -44,6 +44,8 @@ class DeliveryZone extends \yii\db\ActiveRecord
             'name' => 'Name',
             'delivery_price' => 'Delivery Price',
             'active' => 'Active',
+            'name_to' => 'Доставить в',
+            'sort' => 'Сортировка',
         ];
     }
 
@@ -51,5 +53,16 @@ class DeliveryZone extends \yii\db\ActiveRecord
     {
         $zone = self::find()->where(['active'=>1])->all();
         return $zone;
+    }
+
+    public static function getActive()
+    {
+        $zones = self::find()->where(['active'=>1])->orderBy("sort ASC")->all();
+        $out = array();
+        foreach( $zones as $zone )
+        {
+            $out[] = $zone->attributes;
+        }
+        return $out;
     }
 }

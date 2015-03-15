@@ -27,8 +27,15 @@
 		</tr>
 	{{/items}}
 	<tr>
-		<td colspan="2">Стоимость доставки:</td>
-		<td>{{deliveryPrice}} руб.</td>
+		<td style="vertical-align: middle;">+ Доставка:</td>
+		<td  colspan="2">
+		<select id="delivery-zone" class="form-control" onchange="chart.setActiveZone(this.value)">
+		{{#zones}}
+                <option value="{{id}}" {{#isActiveZone}}selected="selected"{{/isActiveZone}}>
+                    в {{name_to}} {{delivery_price}} руб.
+                </option>
+        {{/zones}}
+		</td>
 	</tr>
 	<tr>
 		<td colspan="2"><b>Итого:</b></td>

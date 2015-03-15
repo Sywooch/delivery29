@@ -33,7 +33,7 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        $arProduct = Product::find()->all();
+        $arProduct = Product::getForCat(1);
         return $this->render('index', array('arProduct'=>$arProduct) );
     }
 }

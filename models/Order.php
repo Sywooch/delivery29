@@ -33,7 +33,7 @@ class Order extends \yii\db\ActiveRecord
     {
         return [
             [['created_at'], 'safe'],
-            [['session_id', 'status'], 'integer'],
+            [['session_id', 'status', 'zone_id'], 'integer'],
             [['total'], 'number'],
             [['tel'], 'string', 'max' => 255],
             [['address', 'comment'], 'string', 'max' => 1024]
@@ -54,6 +54,7 @@ class Order extends \yii\db\ActiveRecord
             'session_id' => 'Session ID',
             'total' => 'Total',
             'status' => 'Status',
+            'zone_id' => 'Зона доставки',
         ];
     }
 
@@ -81,5 +82,10 @@ class Order extends \yii\db\ActiveRecord
     public function getItems()
     {
         return $this->hasMany(\app\models\OrderData::className(), ['order_id'=>'id']);
+    }
+
+    public function getZone()
+    {
+        return $this->hasOne(\app\models\DeliveryZone::className(), ['id'=>'zone_id']);
     }
 }

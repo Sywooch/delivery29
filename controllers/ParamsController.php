@@ -48,11 +48,18 @@ class ParamsController extends Controller
     }
 
 
-    public function getData()
+    public static function getData()
     {
         $file = dirname(__DIR__).DIRECTORY_SEPARATOR.'config'.DIRECTORY_SEPARATOR.'params.json';
-        $data = json_decode(file_get_contents($file),true);
-        return $data;
+        if (file_exists($file))
+        {   
+            $data = json_decode(file_get_contents($file),true);
+            return $data;
+        } 
+        else
+        {
+            return array();
+        }
     }
 
     public function saveData($data)
@@ -63,19 +70,19 @@ class ParamsController extends Controller
 
     public function actionIndex()
     {
-    	echo $this->render('index', ['data'=>$this->getData()]);
+    	echo $this->render('index', ['data'=>self::getData()]);
     }
 
     public function actionCreate($name, $value)
     {
-       $data = $this->getData();
+       $data = self::getData();
        $data[$name] = $value;
        $this->saveData($data);
     }
 
     public function actionDelete( $name )
     {
-        $data = $this->getData();
+        $data = self::getData();
         unset($data[$name]);
         $this->saveData($data);
     }
