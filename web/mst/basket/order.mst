@@ -32,7 +32,7 @@
 		<select id="delivery-zone" class="form-control" onchange="chart.setActiveZone(this.value)">
 		{{#zones}}
                 <option value="{{id}}" {{#isActiveZone}}selected="selected"{{/isActiveZone}}>
-                    в {{name_to}} {{delivery_price}} руб.
+                    {{name_to}} {{delivery_price}} руб.
                 </option>
         {{/zones}}
 		</td>
