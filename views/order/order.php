@@ -26,7 +26,7 @@ $this->title = 'Доставка Архагельск';
 				}
 				?>
 				<tr>
-					<td>Доставку в <?php echo $order->zone->name_to?></td>
+					<td>Доставку <?php echo $order->zone->name_to?></td>
 					<td><?php echo $order->zone->delivery_price?> руб.</td>
 				</tr>
 				<tr>
