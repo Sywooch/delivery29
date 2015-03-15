@@ -37,7 +37,16 @@
 		</div>
 		<div class="col-md-6">
 			<div class="panel panel-default">
-				<script type="text/javascript" charset="utf-8" src="//api-maps.yandex.ru/services/constructor/1.0/js/?sid=yLpCsPk8BJ4t3YaLn3s9XQCB53SoHYMJ&width=600&height=450"></script>
+				<div class='panel-body'>
+					<h1>Как оформить заказ?</h1>
+					<ul>
+						<li>
+							Введите ваш адрес и контактный телефон.
+						</li>
+						<li>Нажмите кнопку оформить</li>
+						<li>Дождитесь звонка нашего оператора</li>
+					</ul>
+				</div>
 			</div>
 		</div>
 	</div>
