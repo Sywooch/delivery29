@@ -41,7 +41,9 @@ AppAsset::register($this);
             ]);
             NavBar::end();
         ?>
-        <?= $content ?>
+        <div style="min-height:100%; margin-bottom:-60px">
+	<?= $content ?>
+	</div>
 
     <footer class="footer">
         <div class="container">
