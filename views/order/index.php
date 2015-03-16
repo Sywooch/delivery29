@@ -3,10 +3,10 @@
 $this->title = 'Оформление заказа';
 ?>
 <div class="container">
+	<h1>Оформить заказ</h1>
+        <hr>
 	<div class="row">
 		<div class="col-md-6">
-			<h1>Оформить заказ</h1>
-        		<hr>
 			<form id="order-from" onsubmit="makeOrder(); return false;" class="form-horizontal">
 			  <div class="form-group" id="address">
 			    <label for="address" class="col-sm-3 control-label">Адрес</label>
