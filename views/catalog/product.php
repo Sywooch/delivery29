@@ -2,9 +2,9 @@
 	<div class="panel panel-default">
 	  <div class="panel-body">
 	    <p class="lead" style="font-size:11pt"><?php echo $data->name;?></p>
-	  	<span class="label label-info price-text"><?php echo $data->price?> руб.</span>
+	  	<!--span class="label label-info price-text"><?php echo $data->price?> руб.</span>-->
 	  	<img src="<?php echo $data->getImage(200,200);?>" class="fit-image">
-	  	<button class="btn btn-primary bold-text btn-wide btn-space-top" onclick="addToChart(<?php echo $data->id?>)">В корзину</button>
+	  	<button class="btn btn-primary bold-text btn-wide btn-space-top" onclick="addToChart(<?php echo $data->id?>)">В корзину <?php echo $data->price?> руб.</button>
 	  </div>
 	</div>
 </div>
