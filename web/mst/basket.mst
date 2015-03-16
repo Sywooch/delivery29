@@ -1,4 +1,4 @@
-<div class="panel panel-default main_page_basket">
+<div class="panel panel-default js-basket-stiky">
   <div class="panel-heading">Корзина</div>
   <div class="panel-body">
     <table class="chart-table">
@@ -7,7 +7,7 @@
     			<td>
     				<span>{{name}} x&nbsp;{{count}}</span>
     			</td>
-    			<td>
+    			<td style="text-align:center">
     				{{getSum}}&nbsp;руб.
     			</td>
 			<td>
@@ -43,3 +43,6 @@
     </table>
   </div>
 </div>
+<script>
+chart.initLoad();
+</script>

@@ -21,7 +21,7 @@ $this->title = 'Доставка Архагельск';
 		</div>
 		</div>
 		<div class="col-sm-5 col-md-4 col-lg-3">
-			<div id="basket">
+			<div id="basket" style="position:fixed; margin-right:20px">
 				
 			</div>
 		</div>

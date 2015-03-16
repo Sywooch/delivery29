@@ -12,6 +12,14 @@ var chart = {
 	getSum:function() {
 		return this.price*this.count;
 	},
+	initLoad: function ()
+	{
+		if (!chart.loaded)
+		{
+			chart.loaded = true;
+			chart.afterLoad();
+		}
+	},
 	hasItems: function () {
 		if (this.items.length > 0)
 		{
@@ -70,7 +78,9 @@ var chart = {
 		chart.defaultRewrite();
 		saveDeliveryZone(id);
 	},
-	defaultRewrite:function () {}
+	defaultRewrite:function () {},
+	loaded : false,
+	afterLoad:function () {}
 };
 var tplCache = {}
 

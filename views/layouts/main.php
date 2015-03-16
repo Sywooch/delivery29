@@ -41,13 +41,13 @@ AppAsset::register($this);
             ]);
             NavBar::end();
         ?>
-        <div style="min-height:100%; margin-bottom:-60px; padding-bottom:60px">
-	<?= $content ?>
+    <div style="min-height:100%; margin-bottom:-60px; padding-bottom:60px">
+	   <?= $content ?>
 	</div>
 
     <footer class="footer">
         <div class="container">
-            <p class="pull-left">&copy; Доставка еды из Макдональдс Старфудс в Архангельске <?= date('Y') ?></p>
+            <p class="pull-left">&copy; Доставка еды из Макдональдс Старфудс в Архангельске</p>
             
         </div>
     </footer>
@@ -56,7 +56,6 @@ AppAsset::register($this);
 <script src="/js/mustache.min.js"></script>
 <?php echo $this->render('delivery-zone')?>
 <script src="/js/chart.js"></script>
-<script src="/js/jquery.sticky-kit.js"></script>
 <!-- Yandex.Metrika counter --><script type="text/javascript">(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter29055700 = new Ya.Metrika({id:29055700, webvisor:true, clickmap:true, trackLinks:true, accurateTrackBounce:true}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="//mc.yandex.ru/watch/29055700" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
 </body>
 </html>
