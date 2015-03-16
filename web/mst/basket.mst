@@ -3,12 +3,12 @@
   <div class="panel-body">
     <table class="chart-table">
     	{{#items}}
-    		<tr>
+    		<tr onclick="removeFromChart({{id}})">
     			<td>
-    				<button class="btn btn-xs" onclick="removeFromChart({{id}})">
-    				<span class="glyphicon glyphicon-minus"></span>
-    				</button>
-    				{{count}} x {{name}}
+    				<span class="text-danger" style="cursor:pointer" title="Убрать из корзины">
+    				<span class="glyphicon glyphicon-trash"></span>
+    				</span>
+    				<span>{{count}} x {{name}}</span>
     			</td>
     			<td>
     				{{getSum}} руб. 

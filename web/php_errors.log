@@ -1,0 +1,25 @@
+[14-Mar-2015 04:00:18 Europe/Moscow] PHP Warning:  mkdir(): Permission denied in /var/www/html/dostavka29test/vendor/yiisoft/yii2/helpers/BaseFileHelper.php on line 460
+[14-Mar-2015 04:00:18 Europe/Moscow] PHP Warning:  chmod(): No such file or directory in /var/www/html/dostavka29test/vendor/yiisoft/yii2/helpers/BaseFileHelper.php on line 461
+[14-Mar-2015 04:24:11 Europe/Moscow] PHP Fatal error:  Class 'app\controllers\HttpException' not found in /var/www/html/dostavka29test/controllers/MediaController.php on line 108
+[14-Mar-2015 04:24:44 Europe/Moscow] PHP Fatal error:  Class 'app\controllers\HttpException' not found in /var/www/html/dostavka29test/controllers/MediaController.php on line 88
+[14-Mar-2015 05:19:25 Europe/Moscow] PHP Fatal error:  Class 'app\controllers\HttpException' not found in /var/www/html/dostavka29test/controllers/MediaController.php on line 88
+[14-Mar-2015 05:49:04 Europe/Moscow] PHP Fatal error:  Class 'app\controllers\HttpException' not found in /var/www/html/dostavka29test/controllers/MediaController.php on line 88
+[14-Mar-2015 05:49:04 Europe/Moscow] PHP Fatal error:  Class 'app\controllers\HttpException' not found in /var/www/html/dostavka29test/controllers/MediaController.php on line 88
+[14-Mar-2015 05:49:04 Europe/Moscow] PHP Fatal error:  Class 'app\controllers\HttpException' not found in /var/www/html/dostavka29test/controllers/MediaController.php on line 88
+[14-Mar-2015 05:49:04 Europe/Moscow] PHP Fatal error:  Class 'app\controllers\HttpException' not found in /var/www/html/dostavka29test/controllers/MediaController.php on line 88
+[14-Mar-2015 05:49:04 Europe/Moscow] PHP Fatal error:  Class 'app\controllers\HttpException' not found in /var/www/html/dostavka29test/controllers/MediaController.php on line 88
+[14-Mar-2015 05:49:04 Europe/Moscow] PHP Fatal error:  Class 'app\controllers\HttpException' not found in /var/www/html/dostavka29test/controllers/MediaController.php on line 88
+[14-Mar-2015 05:49:04 Europe/Moscow] PHP Fatal error:  Class 'app\controllers\HttpException' not found in /var/www/html/dostavka29test/controllers/MediaController.php on line 88
+[14-Mar-2015 05:49:04 Europe/Moscow] PHP Fatal error:  Class 'app\controllers\HttpException' not found in /var/www/html/dostavka29test/controllers/MediaController.php on line 88
+[14-Mar-2015 05:49:04 Europe/Moscow] PHP Fatal error:  Class 'app\controllers\HttpException' not found in /var/www/html/dostavka29test/controllers/MediaController.php on line 88
+[14-Mar-2015 05:49:04 Europe/Moscow] PHP Fatal error:  Class 'app\controllers\HttpException' not found in /var/www/html/dostavka29test/controllers/MediaController.php on line 88
+[14-Mar-2015 05:49:04 Europe/Moscow] PHP Fatal error:  Class 'app\controllers\HttpException' not found in /var/www/html/dostavka29test/controllers/MediaController.php on line 88
+[14-Mar-2015 05:49:05 Europe/Moscow] PHP Fatal error:  Class 'app\controllers\HttpException' not found in /var/www/html/dostavka29test/controllers/MediaController.php on line 88
+[14-Mar-2015 05:49:05 Europe/Moscow] PHP Fatal error:  Class 'app\controllers\HttpException' not found in /var/www/html/dostavka29test/controllers/MediaController.php on line 88
+[14-Mar-2015 05:49:05 Europe/Moscow] PHP Fatal error:  Class 'app\controllers\HttpException' not found in /var/www/html/dostavka29test/controllers/MediaController.php on line 88
+[14-Mar-2015 05:49:05 Europe/Moscow] PHP Fatal error:  Class 'app\controllers\HttpException' not found in /var/www/html/dostavka29test/controllers/MediaController.php on line 88
+[14-Mar-2015 05:49:05 Europe/Moscow] PHP Fatal error:  Class 'app\controllers\HttpException' not found in /var/www/html/dostavka29test/controllers/MediaController.php on line 88
+[14-Mar-2015 05:49:05 Europe/Moscow] PHP Fatal error:  Class 'app\controllers\HttpException' not found in /var/www/html/dostavka29test/controllers/MediaController.php on line 88
+[14-Mar-2015 05:49:05 Europe/Moscow] PHP Fatal error:  Class 'app\controllers\HttpException' not found in /var/www/html/dostavka29test/controllers/MediaController.php on line 88
+[14-Mar-2015 05:49:05 Europe/Moscow] PHP Fatal error:  Class 'app\controllers\HttpException' not found in /var/www/html/dostavka29test/controllers/MediaController.php on line 88
+[14-Mar-2015 05:51:22 Europe/Moscow] PHP Fatal error:  Class 'app\controllers\HttpException' not found in /var/www/html/dostavka29test/controllers/MediaController.php on line 108
