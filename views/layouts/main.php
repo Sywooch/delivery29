@@ -41,11 +41,13 @@ AppAsset::register($this);
             ]);
             NavBar::end();
         ?>
-        <?= $content ?>
+    <div style="min-height:100%; margin-bottom:-60px; padding-bottom:60px">
+	   <?= $content ?>
+	</div>
 
     <footer class="footer">
         <div class="container">
-            <p class="pull-left">&copy; Доставка еды из Макдональдс Старфудс в Архангельске <?= date('Y') ?></p>
+            <p class="pull-left">&copy; Доставка еды из Макдональдс Старфудс в Архангельске</p>
             
         </div>
     </footer>

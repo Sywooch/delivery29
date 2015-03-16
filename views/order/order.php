@@ -3,9 +3,9 @@
 $this->title = 'Доставка Архагельск';
 ?>
 <div class="container">
+	 <h1>Заказ нормер <?php echo  $order->id?></h1><hr>
 	<div class="row">
 		<div class="col-md-6">
-			<h1>Заказ нормер <?php echo  $order->id?></h1><hr>
 			<h4>Вы заказали:</h4>
 			<table class="table">
 				<?php
@@ -43,7 +43,7 @@ $this->title = 'Доставка Архагельск';
 		<div class="col-md-6">
 			<div class="panel panel-default">
 				<div class='panel-body'>
-					<h1>Что дальше?</h1><hr>
+					<h2 style="margin-top:0">Что дальше?</h2>
 					<ul>
 						<li>
 							Дождитесь звонка нашего опаратора

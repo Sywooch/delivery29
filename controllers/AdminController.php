@@ -68,7 +68,7 @@ class AdminController extends Controller
         $loginForm->rememberMe = !empty($_POST['rememberMe']) ? true : false;
         if ($loginForm->login())
         {
-            echo $this->render('panel');
+            echo $this->render('panel', ['data'=>ParamsController::getData()]);
         }
         else
         {

@@ -4,7 +4,7 @@ $this->title = 'Доставка Архагельск епта';
 ?>
 <div class="container">
 	<div class="row">
-		<div class="col-md-9">
+		<div class="col-sm-9">
 		<?php 
 			if (!empty($arProduct))
 			{
@@ -18,7 +18,7 @@ $this->title = 'Доставка Архагельск епта';
 			}
 		?>
 		</div>
-		<div class="col-md-3">
+		<div class="col-sm-3">
 			<div id="basket">
 				
 			</div>

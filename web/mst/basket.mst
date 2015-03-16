@@ -1,31 +1,33 @@
-<div class="panel panel-default">
+<div class="panel panel-default js-basket-stiky">
   <div class="panel-heading">Корзина</div>
   <div class="panel-body">
     <table class="chart-table">
     	{{#items}}
-    		<tr>
+    		<tr onclick="removeFromChart({{id}})">
     			<td>
-    				<button class="btn btn-xs" onclick="removeFromChart({{id}})">
-    				<span class="glyphicon glyphicon-minus"></span>
-    				</button>
-    				{{count}} x {{name}}
+    				<span>{{name}} x&nbsp;{{count}}</span>
     			</td>
-    			<td>
-    				{{getSum}} руб. 
+    			<td style="text-align:center">
+    				{{getSum}}&nbsp;руб.
     			</td>
+			<td>
+				<span class="text-danger" style="cursor:pointer" title="Убрать из корзины">
+                                <span class="glyphicon glyphicon-trash"></span>
+                                </span>
+			</td>
     		</tr>
         {{/items}}
         {{#hasItems}}
         <tr>
-            <td colspan="2">
+            <td colspan="3">
                 <hr>
-                <a href="/order" class="btn btn-primary btn-wide btn-space-top">Заказать {{calcTotal}} руб.</a>
+                <a href="/order" class="btn btn-primary btn-wide btn-space-top">Заказать {{calcTotal}}&nbsp;руб.</a>
             </td>
         <tr>
-            <td colspan="2">
+            <td colspan="3">
                 {{#zones}}
                 <button onclick="chart.setActiveZone({{id}})" class="{{#isActiveZone}}btn-success{{/isActiveZone}}{{^isActiveZone}}btn-default{{/isActiveZone}} btn btn-xs btn-wide btn-space-top">
-                    Доставка {{name_to}} <span>{{delivery_price}} руб.</span>
+                    Доставка {{name_to}} <span>{{delivery_price}}&nbsp;руб.</span>
                 </button>
                 {{/zones}}
             </td>
@@ -33,7 +35,7 @@
         {{/hasItems}}
         {{^items}}
             <tr>
-                <td class="empty-chart" colspan="2">
+                <td class="empty-chart" colspan="3">
                     Корзина пуста
                 </td>
             </tr>
@@ -41,3 +43,6 @@
     </table>
   </div>
 </div>
+<script>
+chart.initLoad();
+</script>
