@@ -25,7 +25,7 @@
             <td colspan="2">
                 {{#zones}}
                 <button onclick="chart.setActiveZone({{id}})" class="{{#isActiveZone}}btn-success{{/isActiveZone}}{{^isActiveZone}}btn-default{{/isActiveZone}} btn btn-xs btn-wide btn-space-top">
-                    Доставка в {{name_to}} <span>{{delivery_price}} руб.</span>
+                    Доставка {{name_to}} <span>{{delivery_price}} руб.</span>
                 </button>
                 {{/zones}}
             </td>
