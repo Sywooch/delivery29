@@ -39,7 +39,7 @@
 		<div class="col-md-6">
 			<div class="panel panel-default">
 				<div class='panel-body'>
-					<h1>Что дальше?</h1><hr>
+					<h2 style="margin-top:0">Что дальше?</h2>
 					<ul>
 						<li>
 							Дождитесь звонка нашего опаратора

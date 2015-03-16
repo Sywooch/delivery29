@@ -41,7 +41,7 @@ AppAsset::register($this);
             ]);
             NavBar::end();
         ?>
-        <div style="min-height:100%; margin-bottom:-60px">
+        <div style="min-height:100%; margin-bottom:-60px; padding-bottom:60px">
 	<?= $content ?>
 	</div>
 

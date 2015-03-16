@@ -1,4 +1,4 @@
-<div class="col-md-3" id="product-<?php echo $data->id?>" data-price="<?php echo $data->price?>" data-name="<?php echo $data->name?>">
+<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3" id="product-<?php echo $data->id?>" data-price="<?php echo $data->price?>" data-name="<?php echo $data->name?>">
 	<div class="panel panel-default">
 	  <div class="panel-body">
 	    <p class="lead" style="font-size:11pt"><?php echo $data->name;?></p>
