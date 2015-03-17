@@ -105,7 +105,8 @@ function dg($key, $def)
 			</div>
 			<?php
 		}?>
-		<button type="submit" class="btn btn-default col-sm-offset-2">Create</button>
+		<button type="submit" class="btn btn-default col-sm-offset-2">Save and state</button>
+		<button type="submit" name="x" class="btn btn-default col-sm-offset-2">Save show table</button>
 		<input type="hidden" name="_csrf" value="<?=Yii::$app->request->getCsrfToken()?>" />
 	</form>
 	<BR>

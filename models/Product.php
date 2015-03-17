@@ -35,6 +35,7 @@ class Product extends \yii\db\ActiveRecord
         return [
             [['description'], 'string'],
             [['price'], 'number'],
+            [['sort'], 'integer'],
             [['category_id', 'active', 'image_id', 'buy_counter'], 'integer'],
             [['name'], 'string', 'max' => 512],
             [['external_id'], 'string', 'max' => 255]
@@ -65,8 +66,8 @@ class Product extends \yii\db\ActiveRecord
         return Media::getUrlFix( "image", $this->image_id, $x,$y);
     }
 
-    public static function getForCat($id)
+    public static function getForCat($id, $orderBy = 'sort', $orderType = "ASC")
     {
-        return self::find()->where(['category_id'=>$id, 'active'=>1])->orderBy('id DESC')->all();
+        return self::find()->where(['category_id'=>$id, 'active'=>1])->orderBy("$orderBy $orderType")->all();
     }
 }
