@@ -43,6 +43,11 @@
     </table>
   </div>
 </div>
+{{#hasItems}}
+<div class="visible-xs visible-sm fusking-button">
+    <a href="#bastet" class="btn btn-xs btn-danger">Перейти в корзину</a>
+</div>
+{{/hasItems}}
 <script>
 chart.initLoad();
 </script>

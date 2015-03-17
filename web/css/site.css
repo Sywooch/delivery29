@@ -157,3 +157,10 @@ a.desc:after {
     margin-top: -30px;
     margin-bottom: 5px;
 }
+
+.fusking-button
+{
+    position: fixed;
+    left: 5px;
+    bottom: 5px;
+}
