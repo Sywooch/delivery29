@@ -1,7 +1,14 @@
 <?php
 /* @var $this yii\web\View */
-$this->title = 'Заказ еды домой и в офисы Архангельска';
+$this->title = 'Доставка еды домой и в офисы Архангельска';
 ?>
+<div class="yellowBlock subHeader">
+	<div class="container">
+		<div class="col-md-12">
+			<h1>Доставка еды из <img class="hidden-sm hidden-xs" src="http://mcdonalds.ru/img/lm_logo.jpg" alt="Доставка 29"> Макдоналдс домой или в офис по будям с 18 до 00 в выходные 12 до 00</h1>
+		</div>
+	</div>
+</div>
 <div class="container">
 	<div class="row">
 		<div class="col-sm-7 col-md-8 col-lg-9">
@@ -40,7 +47,7 @@ $this->title = 'Заказ еды домой и в офисы Архангель
 		</div>
 		</div>
 		<div class="col-sm-5 col-md-4 col-lg-3">
-			<div id="basket" style="position:fixed; margin-right:20px">
+			<div id="basket" style="">
 				
 			</div>
 		</div>
