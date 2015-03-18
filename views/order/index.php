@@ -4,12 +4,9 @@ $this->title = 'Оформление заказа';
 ?>
 <div class="container">
 	<h1>Оформить заказ</h1>
-	<hr>
+        <hr>
 	<div class="row">
 		<div class="col-md-6">
-			<div id="chart-data">
-				<p>Подождите корзина загружается....</p>
-			</div>
 			<form id="order-from" onsubmit="makeOrder(); return false;" class="form-horizontal">
 			  <div class="form-group" id="address">
 			    <label for="address" class="col-sm-3 control-label">Адрес</label>
@@ -38,20 +35,23 @@ $this->title = 'Оформление заказа';
 			    </div>
 			  </div>
 			</form>
+			<div class="panel panel-default">
+                                <div class='panel-body'>
+                                        <h3 style="margin-top:0">Как оформить заказ?</h3>
+                                        <ul>
+                                                <li>
+                                                        Введите ваш адрес и контактный телефон.
+                                                </li>
+                                                <li>Нажмите кнопку оформить</li>
+                                                <li>Дождитесь звонка нашего оператора</li>
+                                        </ul>
+                                </div>
+                        </div>
 		</div>
 		<div class="col-md-6">
-			<div class="panel panel-default">
-				<div class='panel-body'>
-					<h1>Как оформить заказ?</h1>
-					<ul>
-						<li>
-							Введите ваш адрес и контактный телефон.
-						</li>
-						<li>Нажмите кнопку оформить</li>
-						<li>Дождитесь звонка нашего оператора</li>
-					</ul>
-				</div>
-			</div>
+			<div id="chart-data">
+                                <p>Подождите корзина загружается....</p>
+                        </div>
 		</div>
 	</div>
 </div>

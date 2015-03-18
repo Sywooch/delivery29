@@ -91,7 +91,14 @@ class AdmProductController extends Controller
             $item->attributes = ($_POST['data']);
             if ($item->validate() && $item->save())
             {
-                echo $this->render('create', array( 'model'=>$this->model, 'baseUrl'=>$this->baseUrl, 'success'=>$item->id, 'data'=>$item));
+                if (isset($_POST['x']))
+                {
+                    echo  $this->render('index', [ 'model'=>$this->model, 'baseUrl'=>$this->baseUrl]);
+                }
+                else
+                {
+                    echo $this->render('create', array( 'model'=>$this->model, 'baseUrl'=>$this->baseUrl, 'success'=>$item->id, 'data'=>$item));
+                }
             }
             else
             {

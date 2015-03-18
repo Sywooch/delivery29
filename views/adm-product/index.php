@@ -13,9 +13,9 @@ function dg($key, $def)
 		return $_GET[$ke];
 	}
 }
-	$sort = dg('sort', 'id');
+	$sort = dg('sort', 'sort');
 	$page = dg('page', 0);
-	$sortType = dg('sortType', 'DESC');
+	$sortType = dg('sortType', 'ASC');
 	$pSize = dg('pageSize', 50);
 	define("PAGE_SIZE", $pSize);
 

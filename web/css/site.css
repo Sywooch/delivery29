@@ -132,3 +132,35 @@ a.desc:after {
     text-align: center;
     padding: 5pt 0 5pt 0;
 }
+
+.yellowBlock
+{
+    background: url('/img/hero_bg.png') repeat;
+    overflow: hidden;
+}
+
+.yellowBlock img
+{
+    height: 50px;
+    margin-top: -25px;
+    margin-bottom: -25px;
+}
+
+.yellowBlock h1
+{
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.29em;
+}
+
+.subHeader
+{
+    margin-top: -30px;
+    margin-bottom: 5px;
+}
+
+.fusking-button
+{
+    position: fixed;
+    left: 5px;
+    bottom: 5px;
+}
