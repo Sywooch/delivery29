@@ -61,7 +61,7 @@ class Vk
 		$params = array(
 			"user_ids" => self::getUserVkNotice(),
 			"message" => urlencode($text),
-			"guid" => count($text),
+			"guid" => mb_strlen($text),
 			"v" => 5.29,
 			"access_token" => self::getAccessToken()
 		);
