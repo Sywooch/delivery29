@@ -9,6 +9,7 @@ class OrderNotice
 		"app\\components\\noticeProviders\\Log",
 		"app\\components\\noticeProviders\\Email",
 		"app\\components\\noticeProviders\\Sms",
+		"app\\components\\noticeProviders\\Vk",
 	];
 
 	public function notice( $order )
