@@ -18,7 +18,7 @@ class Vk
 		foreach ( $order->items as $item )
 		{	
 			$total += $item->count * $item->product->price;
-			if (empty($cat[ $items->product->category_id ]))
+			if (empty($cat[ $item->product->category_id ]))
 			{
 				$cat[ $item->product->category_id ] = $item->count." x ".$item->product->name." (".$item->product->id.") ".$item->product->price." руб \n";
 			}
