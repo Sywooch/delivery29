@@ -3,7 +3,7 @@ namespace app\commands;
 
 use yii\console\Controller;
 use app\models\Product;
-use app\models\media;
+use app\models\Media;
 
 /**
  * Import yaml file into db
