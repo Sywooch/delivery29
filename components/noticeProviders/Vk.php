@@ -18,7 +18,14 @@ class Vk
 		foreach ( $order->items as $item )
 		{	
 			$total += $item->count * $item->product->price;
-			$cat[ $item->product->category_id ] .= $item->count." x ".$item->product->name." (".$item->product->id.") ".$item->product->price." руб \n";
+			if (empty($cat[ $items->product->category_id ]))
+			{
+				$cat[ $item->product->category_id ] = $item->count." x ".$item->product->name." (".$item->product->id.") ".$item->product->price." руб \n";
+			}
+			else
+			{
+				$cat[ $item->product->category_id ] .= $item->count." x ".$item->product->name." (".$item->product->id.") ".$item->product->price." руб \n";
+			}
 		}
 		foreach ($cat as $catId => $items) {
 			$c = Category::find()->where(['id'=>$catId])->one();
