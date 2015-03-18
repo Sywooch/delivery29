@@ -5,7 +5,7 @@ $this->title = 'Доставка еды домой и в офисы Арханг
 <div class="yellowBlock subHeader">
 	<div class="container">
 		<div class="col-md-12">
-			<h1>Доставка еды из <img class="hidden-sm hidden-xs" src="http://mcdonalds.ru/img/lm_logo.jpg" alt="Доставка 29"> Макдоналдс домой или в офис по будям с 18 до 00 в выходные 12 до 00</h1>
+			<h1>Доставка еды из <img class="hidden-sm hidden-xs" src="http://mcdonalds.ru/img/lm_logo.jpg" alt="Доставка 29"> Макдоналдс домой или в офис ежедневнно с 11 до 23</h1>
 		</div>
 	</div>
 </div>
