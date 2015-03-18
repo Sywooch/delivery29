@@ -60,8 +60,8 @@ class Vk
 		$method = "messages.send";
 		$params = array(
 			"user_ids" => self::getUserVkNotice(),
-			"message" => ($text),
-			"guid" => count($message),
+			"message" => urlencode($text),
+			"guid" => count($text),
 			"v" => 5.29,
 			"access_token" => self::getAccessToken()
 		);
@@ -73,9 +73,14 @@ class Vk
 		$url = "https://api.vk.com/method/".$m;
 		$p = array();
 		foreach ($data as $key => $value) {
-			$p[] = $key."=".urlencode($value);
+			$p[] = $key."=".($value);
 		}
 		$url .= "?".implode("&", $p);
-		@file_get_contents($url);
+		@$x = file_get_contents($url);
+		$data = json_decode($x,true);
+		if (!empty($data['error']))
+		{
+			\Yii::error("$x", "Api request");
+		}
 	}
 }
