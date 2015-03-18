@@ -17,13 +17,13 @@
 	function saveParam(pName, valId, success)
 	{
 		var val = $(valId).val();
-		$.get('/params/create?name='+pName+'&value='+val).success( function () {alert(success);} );
+		$.get('/params/create', {'name':pName,'value':val}).success( function () {alert(success);} );
 	}
 
 	function telParam()
 	{
 		var tel = $('#tel').val();
-		$.get('/params/create?name=noticePhone&value='+tel).success( function () {alert("Номер изменен");} );
+		$.get('/params/create', {'name':'noticePhone','value':tel}).success( function () {alert("Номер изменен");} );
 	}
 
 	function smsParam(val)
