@@ -9,6 +9,17 @@ use app\assets\AppAsset;
 /* @var $content string */
 
 AppAsset::register($this);
+
+function isActive($url)
+{
+    if (strpos($_SERVER['REQUEST_URI'], $url) !== false)
+    {
+        if ($url == "/" && $_SERVER['REQUEST_URI'] == "/" || $url != "/")
+        return "active";
+    }
+    return "";
+}
+
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -34,9 +45,14 @@ AppAsset::register($this);
                 ],
             ]);
             echo Nav::widget([
+                'options' => ['class' => 'navbar-nav'],
+                'items' => [
+                    ['label' => 'Доставка еды из Макдоналдс и Старфудс домой или в офис ежедневнно с 11 до 23', 'url' => ['/']],
+                ],
+            ]);
+            echo Nav::widget([
                 'options' => ['class' => 'navbar-nav navbar-right'],
                 'items' => [
-                    ['label' => 'Еда', 'url' => ['/']],
                     ['label' => 'Зоны доставки', 'url' => ['/zone']],
                     ['label' => 'Режим работы', 'url' => ['/work']],
                 ],
@@ -44,6 +60,22 @@ AppAsset::register($this);
             NavBar::end();
         ?>
     <div style="min-height:100%; margin-bottom:-60px; padding-bottom:60px">
+        <div class="container">
+            <div class="col-sm-7 col-md-8 col-lg-9">
+                <ul class="nav nav-tabs">
+                    <li class="<?php echo isActive('/')?>"><a class='md-button' href="/">Макдоналдс</a></li>
+                    <li class="<?php echo isActive('/star-foods')?>"><a  class='sf-button' href="/star-foods">Старфудс</a></li>
+                </ul>
+                <br>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <?php 
+                    // echo $this->render('../global/category-menu');
+                ?>
+            </div>
+        </div>
 	   <?= $content ?>
 	</div>
 

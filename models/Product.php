@@ -36,7 +36,7 @@ class Product extends \yii\db\ActiveRecord
             [['description'], 'string'],
             [['price'], 'number'],
             [['sort'], 'integer'],
-            [['category_id', 'active', 'image_id', 'buy_counter'], 'integer'],
+            [['category_id', 'active', 'image_id', 'buy_counter', 'subcategory_id'], 'integer'],
             [['name'], 'string', 'max' => 512],
             [['external_id'], 'string', 'max' => 255]
         ];
@@ -57,6 +57,7 @@ class Product extends \yii\db\ActiveRecord
             'image_id' => 'Image ID',
             'external_id' => 'External ID',
             'buy_counter' => 'Buy Counter',
+            'subcategory_id' => 'Подкатегория',
         ];
     }
 
@@ -66,8 +67,57 @@ class Product extends \yii\db\ActiveRecord
         return Media::getUrlFix( "image", $this->image_id, $x,$y);
     }
 
-    public static function getForCat($id, $orderBy = 'sort', $orderType = "ASC")
+    public function getSubCategory()
     {
-        return self::find()->where(['category_id'=>$id, 'active'=>1])->orderBy("$orderBy $orderType")->all();
+        return $this->hasOne(\app\models\SubCategory::className(), ['id'=>'subcategory_id']);
     }
+
+    public function getCategory()
+    {
+        return $this->hasOne(\app\models\Category::className(), ['id'=>'category_id']);
+    }
+
+    private static $subcategoryCache = array();
+
+    public static function getSubategotyName($id)
+    {
+        if  (empty(self::$subcategoryCache[$id]))
+        {
+            $cat = \app\models\SubCategory::find()->where(['id'=>$id])->one();
+            self::$subcategoryCache[$id] = $cat;
+        }
+        if (!empty(self::$subcategoryCache[$id]))
+        {
+            return self::$subcategoryCache[$id]->name;
+        }
+        else
+        {
+            return "";
+        }
+    }
+
+
+    public static function getForCat($id, $orderBy = 'sort', $orderType = "ASC", $makeSubcategory = false)
+    {
+        $array = self::find()->where(['category_id'=>$id, 'active'=>1])->orderBy("$orderBy $orderType")->all();
+        if (!$makeSubcategory)
+        {
+            return $array;
+        }
+        else
+        {
+            $out = array();
+            foreach ($array as $item)
+            {
+                $out[ $item->subcategory_id ]['items'][] = $item;
+            }
+            foreach ($out as $key=>&$val)
+            {
+                $val['id'] = $key;
+                $val['name'] = self::getSubategotyName($key);
+            }
+            return $out;
+        }
+    }
+
 }

@@ -8,7 +8,7 @@ products:
    external_id: биг бургерстар
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
    price: 118
-   subcategoty_id: 1
+   subcategory_id: 1
  - name: Биг стар
    category_id: 2
    active: 1
@@ -16,7 +16,7 @@ products:
    external_id: биг стар
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
    price: 101
-   subcategoty_id: 1
+   subcategory_id: 1
  - name: Биф чиабатта
    category_id: 2
    active: 1
@@ -24,7 +24,7 @@ products:
    external_id: биф чиабатта
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
    price: 132
-   subcategoty_id: 1
+   subcategory_id: 1
  - name: Чикен чиабатта
    category_id: 2
    active: 1
@@ -32,7 +32,7 @@ products:
    external_id: чикен чиабатта
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
    price: 132
-   subcategoty_id: 1
+   subcategory_id: 1
  - name: Веджистар
    category_id: 2
    active: 1
@@ -40,7 +40,7 @@ products:
    external_id: веджистар
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
    price: 68
-   subcategoty_id: 1
+   subcategory_id: 1
  - name: Фишбургер
    category_id: 2
    active: 1
@@ -48,7 +48,7 @@ products:
    external_id: фишбургер
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
    price: 93
-   subcategoty_id: 1
+   subcategory_id: 1
  - name: Гамбургер
    category_id: 2
    active: 1
@@ -56,7 +56,7 @@ products:
    external_id: гамбургер
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
    price: 42
-   subcategoty_id: 1
+   subcategory_id: 1
  - name: Чизбургер
    category_id: 2
    active: 1
@@ -64,7 +64,7 @@ products:
    external_id: чизбургер
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
    price: 53
-   subcategoty_id: 1
+   subcategory_id: 1
  - name: Двойной чизбургер
    category_id: 2
    active: 1
@@ -72,7 +72,7 @@ products:
    external_id: двойной чизбургер
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
    price: 99
-   subcategoty_id: 1
+   subcategory_id: 1
  - name: Чизбургер фрэш
    category_id: 2
    active: 1
@@ -80,7 +80,7 @@ products:
    external_id: чизбургер фрэш
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
    price: 69
-   subcategoty_id: 1
+   subcategory_id: 1
  - name: Чикенстар
    category_id: 2
    active: 1
@@ -88,7 +88,7 @@ products:
    external_id: чикенстар
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
    price: 53
-   subcategoty_id: 1
+   subcategory_id: 1
  - name: Чикенстар фрэш
    category_id: 2
    active: 1
@@ -96,7 +96,7 @@ products:
    external_id: чикенстар фрэш
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
    price: 93
-   subcategoty_id: 1
+   subcategory_id: 1
  - name: Мега бургер
    category_id: 2
    active: 1
@@ -104,7 +104,7 @@ products:
    external_id: мега бургер
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
    price: 171
-   subcategoty_id: 1
+   subcategory_id: 1
  - name: Чилибургер
    category_id: 2
    active: 1
@@ -112,7 +112,7 @@ products:
    external_id: чилибургер
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
    price: 139
-   subcategoty_id: 1
+   subcategory_id: 1
 # Роллы
  - name: Биф ролл стар
    category_id: 2
@@ -121,7 +121,7 @@ products:
    external_id: биф ролл стар
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
    price: 109
-   subcategoty_id: 2
+   subcategory_id: 2
  - name: Фиш ролл стар
    category_id: 2
    active: 1
@@ -129,7 +129,7 @@ products:
    external_id: фиш ролл стар
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
    price: 109
-   subcategoty_id: 2
+   subcategory_id: 2
  - name: Чикен ролл стар
    category_id: 2
    active: 1
@@ -137,7 +137,7 @@ products:
    external_id: чикен ролл стар
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
    price: 109
-   subcategoty_id: 2
+   subcategory_id: 2
  - name: Классический
    category_id: 2
    active: 1
@@ -145,7 +145,7 @@ products:
    external_id: классический
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
    price: 69
-   subcategoty_id: 3
+   subcategory_id: 3
  - name: Французский
    category_id: 2
    active: 1
@@ -153,7 +153,7 @@ products:
    external_id: французский
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
    price: 73
-   subcategoty_id: 3
+   subcategory_id: 3
 # ----
  - name: Айдахо
    category_id: 2
@@ -162,7 +162,7 @@ products:
    external_id: айдахо
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
    price: 63
-   subcategoty_id: 4
+   subcategory_id: 4
  - name: Фри маленькая
    category_id: 2
    active: 1
@@ -170,7 +170,7 @@ products:
    external_id: фри маленькая
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
    price: 56
-   subcategoty_id: 4
+   subcategory_id: 4
  - name: Фри большая
    category_id: 2
    active: 1
@@ -178,7 +178,7 @@ products:
    external_id: фри большая
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
    price: 72
-   subcategoty_id: 4
+   subcategory_id: 4
  - name: Оладьи
    category_id: 2
    active: 1
@@ -186,7 +186,7 @@ products:
    external_id: оладьи
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
    price: 56
-   subcategoty_id: 4
+   subcategory_id: 4
 #----
  - name: Креветки 4шт. +1 соус
    category_id: 2
@@ -195,7 +195,7 @@ products:
    external_id: креветки 4шт. +1 соус
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
    price: 114
-   subcategoty_id: 9
+   subcategory_id: 9
  - name: Креветки 6шт. +2 соуса
    category_id: 2
    active: 1
@@ -209,7 +209,7 @@ products:
    sort: 100
    external_id: крылышки 3 шт.
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
-   subcategoty_id: 9
+   subcategory_id: 9
    price: 95
  - name: Крылышки 6 шт.
    category_id: 2
@@ -217,7 +217,7 @@ products:
    sort: 100
    external_id: крылышки 6 шт.
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
-   subcategoty_id: 9
+   subcategory_id: 9
    price: 177
  - name: Крылышки 9 шт.
    category_id: 2
@@ -225,7 +225,7 @@ products:
    sort: 100
    external_id: крылышки 9 шт.
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
-   subcategoty_id: 9
+   subcategory_id: 9
    price: 254
 
  - name: Наггетсы 4 шт
@@ -234,7 +234,7 @@ products:
    sort: 100
    external_id: наггетсы 4 шт
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
-   subcategoty_id: 9
+   subcategory_id: 9
    price: 69
  - name: Наггетсы 6 шт
    category_id: 2
@@ -242,7 +242,7 @@ products:
    sort: 100
    external_id: наггетсы 6 шт
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
-   subcategoty_id: 9
+   subcategory_id: 9
    price: 99
  - name: Наггетсы 9 шт
    category_id: 2
@@ -250,7 +250,7 @@ products:
    sort: 100
    external_id: наггетсы 9 шт
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
-   subcategoty_id: 9
+   subcategory_id: 9
    price: 135
  - name: Наггетсы 20 шт
    category_id: 2
@@ -258,7 +258,7 @@ products:
    sort: 100
    external_id: наггетсы 20 шт
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
-   subcategoty_id: 9
+   subcategory_id: 9
    price: 235
  - name: Сырный
    category_id: 2
@@ -267,7 +267,7 @@ products:
    external_id: сырный
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
    price: 20
-   subcategoty_id: 10
+   subcategory_id: 10
  - name: Барбекью
    category_id: 2
    active: 1
@@ -275,7 +275,7 @@ products:
    external_id: барбекью
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
    price: 20
-   subcategoty_id: 10
+   subcategory_id: 10
  - name: Карри
    category_id: 2
    active: 1
@@ -283,7 +283,7 @@ products:
    external_id: карри
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
    price: 20
-   subcategoty_id: 10
+   subcategory_id: 10
  - name: Кисло-сладкий
    category_id: 2
    active: 1
@@ -291,7 +291,7 @@ products:
    external_id: кисло-сладкий
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
    price: 20
-   subcategoty_id: 10
+   subcategory_id: 10
  - name: Чесночный
    category_id: 2
    active: 1
@@ -299,7 +299,7 @@ products:
    external_id: чесночный
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
    price: 20
-   subcategoty_id: 10
+   subcategory_id: 10
 #7) Салаты
  - name: Овощной с маслом 
    category_id: 2
@@ -308,7 +308,7 @@ products:
    external_id: овощной с маслом 
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
    price: 109
-   subcategoty_id: 5
+   subcategory_id: 5
  - name: Овощной с майонезом 
    category_id: 2
    active: 1
@@ -316,7 +316,7 @@ products:
    external_id: овощной с майонезом 
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
    price: 109
-   subcategoty_id: 5
+   subcategory_id: 5
  - name: Цезарь с курой 
    category_id: 2
    active: 1
@@ -324,7 +324,7 @@ products:
    external_id: цезарь с курой 
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
    price: 156
-   subcategoty_id: 5
+   subcategory_id: 5
  - name: Цезарь с креветками 
    category_id: 2
    active: 1
@@ -332,7 +332,7 @@ products:
    external_id: цезарь с креветками 
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
    price: 179
-   subcategoty_id: 5
+   subcategory_id: 5
 
  - name: "Гамбургер, фри, соус, напиток б/а 0,3л или сок 0,2л киндер"
    category_id: 2
@@ -341,7 +341,7 @@ products:
    external_id: "гамбургер, фри, соус, напиток б/а 0,3л или сок 0,2л киндер"
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
    price: 179
-   subcategoty_id: 6
+   subcategory_id: 6
  - name: "Гамбургер, фри, соус, напиток б/а 0,3л или сок 0,2л игрушка"
    category_id: 2
    active: 1
@@ -349,7 +349,7 @@ products:
    external_id: "гамбургер, фри, соус, напиток б/а 0,3л или сок 0,2л игрушка"
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
    price: 193
-   subcategoty_id: 6
+   subcategory_id: 6
 
  - name: "Наггетсы, фри, соус, напиток б/а 0,3л или сок 0,2л киндер"
    category_id: 2
@@ -358,7 +358,7 @@ products:
    external_id: "наггетсы, фри, соус, напиток б/а 0,3л или сок 0,2л киндер"
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
    price: 179
-   subcategoty_id: 6
+   subcategory_id: 6
  - name: "Наггетсы, фри, соус, напиток б/а 0,3л или сок 0,2л игрушка"
    category_id: 2
    active: 1
@@ -366,7 +366,7 @@ products:
    external_id: "наггетсы, фри, соус, напиток б/а 0,3л или сок 0,2л игрушка"
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
    price: 193
-   subcategoty_id: 6
+   subcategory_id: 6
 
  - name: "Чикенстар, фри, соус, напиток б/а 0,3л или сок 0,2л игрушка"
    category_id: 2
@@ -375,7 +375,7 @@ products:
    external_id: "чикенстар, фри, соус, напиток б/а 0,3л или сок 0,2л игрушка"
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
    price: 193
-   subcategoty_id: 6 
+   subcategory_id: 6 
  - name: "Чикенстар, фри, соус, напиток б/а 0,3л или сок 0,2л киндер"
    category_id: 2
    active: 1
@@ -383,7 +383,7 @@ products:
    external_id: "чикенстар, фри, соус, напиток б/а 0,3л или сок 0,2л киндер"
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
    price: 179
-   subcategoty_id: 6
+   subcategory_id: 6
 
  - name: Комбо 1
    category_id: 2
@@ -393,7 +393,7 @@ products:
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
    description: "Крылышки, фри, соус, напиток б/а 0,3л"
    price: 179
-   subcategoty_id: 7
+   subcategory_id: 7
 
  - name: Комбо 2
    category_id: 2
@@ -403,7 +403,7 @@ products:
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
    description: "Наггетсы 6шт., айдахо, соус, напиток б/а 0,3л"
    price: 187
-   subcategoty_id: 7
+   subcategory_id: 7
 
  - name: Комбо 3
    category_id: 2
@@ -413,7 +413,7 @@ products:
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
    description: "Биг стар, фри, соус, напиток б/а 0,3л"
    price: 192
-   subcategoty_id: 7
+   subcategory_id: 7
 
 
  - name: Маффин
@@ -424,7 +424,7 @@ products:
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
    description: "Шоколад, ваниль" 
    price: 55
-   subcategoty_id: 8
+   subcategory_id: 8
 
  - name: Молочный коктейль
    category_id: 2
@@ -434,7 +434,7 @@ products:
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
    description: "Ваниль, клубника, шоколад" 
    price: 73
-   subcategoty_id: 8
+   subcategory_id: 8
 
  - name: Мороженное с топингом
    category_id: 2
@@ -444,7 +444,7 @@ products:
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
    description: "Клубника, шоколад, карамель" 
    price: 59
-   subcategoty_id: 8
+   subcategory_id: 8
 
  - name: Пирожок
    category_id: 2
@@ -454,7 +454,7 @@ products:
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
    description: "Вишня, яблоко, лесные ягоды" 
    price: 56
-   subcategoty_id: 8
+   subcategory_id: 8
 
  - name: "Пончик - шоколад, детский"
    category_id: 2
@@ -463,5 +463,5 @@ products:
    external_id: "пончик - шоколад, детский"
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
    price: 55
-   subcategoty_id: 8
+   subcategory_id: 8
 
