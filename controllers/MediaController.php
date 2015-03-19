@@ -80,7 +80,7 @@ class MediaController extends Controller
 		$y = $this->getAccept($y, $this->acceptY);
 	}
 
-	public function actionImage($id, $sizeX = 500, $sizeY = 500)
+	public function actionImage($id, $sizeX = 500, $sizeY = 500, $ext = 'jpg')
 	{
 		$media = Media::find()->where(["id"=>$id])->one();
 		if (empty($media) || $media->type != 'image')
@@ -95,7 +95,7 @@ class MediaController extends Controller
 		// print_r($media->getFileName( $sizeX, $sizeY ) );
 		// die();
 		Image::thumbnail($media->getSourceName(), $sizeX, $sizeY)
-    ->save( $media->getFileName( $sizeX, $sizeY ) , ['quality' => 100]);
+    ->save( $media->getFileName( $sizeX, $sizeY, $ext ) , ['quality' => 100]);
 
 		$this->redirect( $media->getUrl( $sizeX, $sizeY ) );
 	}
