@@ -40,6 +40,7 @@ AppAsset::register($this);
                     ['label' => 'Заказы', 'url' => ['/adm-order']],
                     ['label' => 'Параметры', 'url' => ['/params']],
                     ['label' => 'Катагории товаров', 'url' => ['/adm-category']],
+                    ['label' => 'Подкатагории товаров', 'url' => ['/adm-sub-category']],
                 ],
             ]);
             NavBar::end();

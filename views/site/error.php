@@ -14,9 +14,11 @@ $this->title = $name;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <div class="alert alert-danger">
-        <!-- <pre>
+        <?php if( in_array($_SERVER['HTTP_HOST'], ['dostavka29.loc', 'text.dostavka29.ru']) ) : ?>
+        <pre>
         <?php print_r($exception)?>
-        </pre> -->
+        </pre>
+    <?php endif;?>
         <?= nl2br(Html::encode($message)) ?>
     </div>
 

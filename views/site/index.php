@@ -2,13 +2,6 @@
 /* @var $this yii\web\View */
 $this->title = 'Доставка еды домой и в офисы Архангельска';
 ?>
-<div class="yellowBlock subHeader">
-	<div class="container">
-		<div class="col-md-12">
-			<h1>Доставка еды из <img class="hidden-sm hidden-xs" src="http://mcdonalds.ru/img/lm_logo.jpg" alt="Доставка 29"> Макдоналдс домой или в офис ежедневнно с 11 до 23</h1>
-		</div>
-	</div>
-</div>
 <div class="container">
 	<div class="row">
 		<div class="col-sm-7 col-md-8 col-lg-9">

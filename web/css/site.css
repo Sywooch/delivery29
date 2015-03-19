@@ -164,3 +164,53 @@ a.desc:after {
     left: 5px;
     bottom: 5px;
 }
+
+.star-foods-product
+{
+    border: 1px solid #CCC;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.star-foods-product:hover
+{
+    background: #FFDDDD;
+}
+
+.star-foods-product .price
+{
+    float: right;
+    background: #FFDDDD;
+    padding: 0 3px;
+    border-radius: 3px;
+}
+
+.md-button:hover, .active .md-button
+{
+    background: url('/img/md-logo.png') no-repeat 5px center;
+}
+.md-button
+{
+    background: url('/img/md-logo-off.png') no-repeat 5px center;
+    background-size: auto 30px;
+    padding-left: 46px !important;
+    /*font-weight: bold;*/
+    font-size: 18pt;
+    font-family: "Open Sans", sans-serif;
+}
+
+.sf-button:hover, .active .sf-button
+{
+    background: url('/img/sf-logo.png') no-repeat 5px center;
+}
+.sf-button
+{
+    background: url('/img/sf-logo-off.png') no-repeat 5px center;
+    background-size: auto 30px;
+    padding-left: 56px !important;
+    /*font-weight: bold;*/
+    font-size: 18pt;
+    font-family: "Open Sans", sans-serif;
+}
