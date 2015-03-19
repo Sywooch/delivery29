@@ -113,7 +113,7 @@ products:
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
    price: 139
    subcategory_id: 1
-# Роллы
+# Роллы  2
  - name: Биф ролл стар
    category_id: 2
    active: 1
@@ -138,6 +138,7 @@ products:
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
    price: 109
    subcategory_id: 2
+ #Хот-доги 3
  - name: Классический
    category_id: 2
    active: 1
@@ -154,7 +155,7 @@ products:
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
    price: 73
    subcategory_id: 3
-# ----
+#Картофель 4
  - name: Айдахо
    category_id: 2
    active: 1
@@ -187,7 +188,7 @@ products:
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
    price: 56
    subcategory_id: 4
-#----
+#Снэки 9
  - name: Креветки 4шт. +1 соус
    category_id: 2
    active: 1
@@ -227,7 +228,6 @@ products:
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
    subcategory_id: 9
    price: 254
-
  - name: Наггетсы 4 шт
    category_id: 2
    active: 1
@@ -300,7 +300,7 @@ products:
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
    price: 20
    subcategory_id: 10
-#7) Салаты
+# Салаты 5
  - name: Овощной с маслом 
    category_id: 2
    active: 1
@@ -333,7 +333,7 @@ products:
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
    price: 179
    subcategory_id: 5
-
+# Хеппи стар 6
  - name: "Гамбургер, фри, соус, напиток б/а 0,3л или сок 0,2л киндер"
    category_id: 2
    active: 1
@@ -384,7 +384,7 @@ products:
    image: http://starfoods.spb.ru/bitrix/templates/main_starfoods/im/logo.png
    price: 179
    subcategory_id: 6
-
+# Косбо наборы 7
  - name: Комбо 1
    category_id: 2
    active: 1
@@ -425,7 +425,7 @@ products:
    description: "Шоколад, ваниль" 
    price: 55
    subcategory_id: 8
-
+# Десерты
  - name: Молочный коктейль
    category_id: 2
    active: 1
