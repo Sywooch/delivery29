@@ -43,7 +43,7 @@ class Media extends \yii\db\ActiveRecord
         return $url."?".time();
     }
 
-    public static function getUrlFix($type, $id, $x, $y, $ext = 'png')
+    public static function getUrlFix($type, $id, $x, $y, $ext = 'jpg')
     {
         $url = Yii::$app->params['mediaUrl'];
         $url .= '/'.$type.'/'.$id.'/'.intval($x).'x'.intval($y).'.'.$ext;
