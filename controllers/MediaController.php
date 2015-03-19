@@ -97,7 +97,7 @@ class MediaController extends Controller
 		Image::thumbnail($media->getSourceName(), $sizeX, $sizeY)
     ->save( $media->getFileName( $sizeX, $sizeY, $ext ) , ['quality' => 100]);
 
-		$this->redirect( $media->getUrl( $sizeX, $sizeY ) );
+		$this->redirect( $media->getUrl( $sizeX, $sizeY, $ext ) );
 	}
 
 	public function actionUpload()
