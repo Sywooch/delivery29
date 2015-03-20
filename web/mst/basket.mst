@@ -12,11 +12,21 @@
     			</td>
 			<td>
 				<span class="text-danger" style="cursor:pointer" title="Убрать из корзины">
-                                <span class="glyphicon glyphicon-trash"></span>
-                                </span>
+                    <span class="glyphicon glyphicon-trash"></span>
+                </span>
 			</td>
     		</tr>
         {{/items}}
+        {{#haveManyDeliveryPoints}}
+        	<tr>
+            	<td>
+           			<span style="font-size:8pt">Досатвка из разных ресторанов</span>
+       			</td>
+       			<td colspan="2" style="text-align:center">
+        				{{getAddPrice}}&nbsp;руб
+            	</td>
+            </tr>
+        {{/haveManyDeliveryPoints}}
         {{#hasItems}}
         <tr>
             <td colspan="3">

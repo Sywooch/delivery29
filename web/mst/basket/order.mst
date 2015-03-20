@@ -37,6 +37,14 @@
         {{/zones}}
 		</td>
 	</tr>
+    {{#haveManyDeliveryPoints}}
+    <tr>
+        <td colspan="2" style="vertical-align: middle;">+ Доставка из разных ресторанов</td>
+        <td>
+        {{getAddPrice}}&nbsp;руб
+        </td>
+    </tr>
+    {{/haveManyDeliveryPoints}}
 	<tr>
 		<td colspan="2"><b>Итого:</b></td>
 		<td>{{calcTotal}} руб.</td>
