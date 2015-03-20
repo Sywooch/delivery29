@@ -2,11 +2,15 @@ var chart = {
 	items:[],
 	calcTotal: function () {
 		var total = chart.getDeliveryPrice();
-		for (x in this.items)
+		for (var x in this.items)
 		{
 			var s = this.items[x].price*this.items[x].count;
 			total += s;
 		}
+        if (chart.haveManyDeliveryPoints())
+        {
+            total += chart.getAddPrice();
+        }
 		return total;
 	},
 	getSum:function() {
@@ -80,7 +84,21 @@ var chart = {
 	},
 	defaultRewrite:function () {},
 	loaded : false,
-	afterLoad:function () {}
+	afterLoad:function () {},
+    haveManyDeliveryPoints: function () {
+        var categorys = [];
+        for (var x in chart.items)
+        {
+            if (categorys.indexOf(chart.items[x].category_id) == -1)
+            {
+                categorys.push(chart.items[x].category_id);
+            }
+        }
+        return categorys.length > 1;
+    },
+    getAddPrice: function () {
+        return parseFloat( ADD_DELIVERY_PRICE );
+    }
 };
 var tplCache = {}
 
@@ -102,11 +120,13 @@ function addToChart(id)
 	{
 		var productName = $('#product-'+id).attr('data-name');
 		var productPrice = $('#product-'+id).attr('data-price');
+		var productCategoryId = $('#product-'+id).attr('data-category_id');
 		chart.items.push ({
 			"name":productName,
 			"price":productPrice,
 			"id":id,
-			"count":1
+			"count":1,
+            category_id:productCategoryId
 		});
 	}
 	else
