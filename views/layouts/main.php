@@ -10,16 +10,16 @@ use app\assets\AppAsset;
 
 AppAsset::register($this);
 
-function isActive($url)
-{
-    if (strpos($_SERVER['REQUEST_URI'], $url) !== false)
+if (!function_exists("isActive")) {
+    function isActive($url)
     {
-        if ($url == "/" && $_SERVER['REQUEST_URI'] == "/" || $url != "/")
-        return "active";
+        if (strpos($_SERVER['REQUEST_URI'], $url) !== false) {
+            if ($url == "/" && $_SERVER['REQUEST_URI'] == "/" || $url != "/")
+                return "active";
+        }
+        return "";
     }
-    return "";
 }
-
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
