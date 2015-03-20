@@ -1,6 +1,7 @@
 <?php
 namespace app\components\noticeProviders;
 use Yii;
+use app\models\Category;
 class Sms
 {
 	//http://bytehand.com:3800/send?id=<ID>&key=<KEY>&to=<PHONE>&from=<SIGNATURE>&text=<TEXT>
@@ -15,11 +16,32 @@ class Sms
 		$text .= $order->address."\n\r";
 		$text .= $order->comment."\n\r";
 		$total = 0;
-		foreach ( $order->items as $item )
-		{
-			$total += $item->count * $item->product->price;
-			$text .= $item->count." x ".$item->product->name." (".$item->product->id.") ".$item->product->price."\n\r";
-		}
+        $cat = [];
+        foreach ( $order->items as $item )
+        {
+            $total += $item->count * $item->product->price;
+            if (empty($cat[ $item->product->category_id ]))
+            {
+                $cat[ $item->product->category_id ] = $item->count." x ".$item->product->name." (".$item->product->id.") ".$item->product->price." руб \n";
+            }
+            else
+            {
+                $cat[ $item->product->category_id ] .= $item->count." x ".$item->product->name." (".$item->product->id.") ".$item->product->price." руб \n\r";
+            }
+        }
+        foreach ($cat as $catId => $items) {
+            $c = Category::find()->where(['id'=>$catId])->one();
+            if (!empty($c))
+            {
+                $text .= "Из ".$c->name." \n\r";
+            }
+            else
+            {
+                $text .= "Из ".$catId."\n\r";
+            }
+
+            $text .= $items;
+        }
 		$text .= "=".$total;
 
 		$data = [
