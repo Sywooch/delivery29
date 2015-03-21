@@ -50,7 +50,7 @@
     </tr>
     {{/haveManyDeliveryPoints}}
 	<tr>
-		<td colspan="2"><b>Итого:</b></td>
+		<td colspan="3"><b>Итого:</b></td>
 		<td>{{calcTotal}} руб.</td>
 	</tr>
 </table>
