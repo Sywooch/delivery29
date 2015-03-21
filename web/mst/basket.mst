@@ -5,7 +5,7 @@
     	{{#items}}
     		<tr onclick="removeFromChart({{id}})">
     			<td>
-    				<span>{{name}} x&nbsp;{{count}}</span>
+    				<img class="basket-category-icon" src="/img/categorys/{{category_id}}.png" alt="{{category_id}}"> <span>{{name}} x&nbsp;{{count}}</span>
     			</td>
     			<td style="text-align:center">
     				{{getSum}}&nbsp;руб.

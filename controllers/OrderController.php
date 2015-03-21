@@ -14,6 +14,7 @@ use app\models\OrderData;
 
 class OrderController extends Controller
 {
+    public $layout= "order";
     public function behaviors()
     {
         return [

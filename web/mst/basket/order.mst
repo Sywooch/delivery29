@@ -4,12 +4,13 @@
             <th>Название</th>
             <th>Кол.</th>
             <th>Стоимость</th>
+            <th></th>
         </tr>
     </thead>
 	{{#items}}
 		<tr>
 			<td>
-				{{name}}
+				<img class="basket-order-category-icon" src="/img/categorys/{{category_id}}.png" alt="{{category_id}}"> {{name}}
 			</td>
             <td>
                 {{count}}
@@ -17,18 +18,21 @@
 			<td>
 				{{getSum}} руб. 
 			</td>
+			<td style="text-align:right">
+			    <button class="btn btn-default btn-xs" onclick="removeFromChart({{id}})">убрать</button>
+			</td>
 		</tr>
 	{{/items}}
 	{{^items}}
 		<tr>
-			<td class="empty-chart" colspan="3">
+			<td class="empty-chart" colspan="4">
 				Корзина пуста
 			</td>
 		</tr>
 	{{/items}}
 	<tr>
 		<td style="vertical-align: middle;">+ Доставка:</td>
-		<td  colspan="2">
+		<td  colspan="3">
 		<select id="delivery-zone" class="form-control" onchange="chart.setActiveZone(this.value)">
 		{{#zones}}
                 <option value="{{id}}" {{#isActiveZone}}selected="selected"{{/isActiveZone}}>
@@ -39,14 +43,14 @@
 	</tr>
     {{#haveManyDeliveryPoints}}
     <tr>
-        <td colspan="2" style="vertical-align: middle;">+ Доставка из разных ресторанов</td>
+        <td colspan="3" style="vertical-align: middle;">+ Доставка из разных ресторанов</td>
         <td>
         {{getAddPrice}}&nbsp;руб
         </td>
     </tr>
     {{/haveManyDeliveryPoints}}
 	<tr>
-		<td colspan="2"><b>Итого:</b></td>
+		<td colspan="3"><b>Итого:</b></td>
 		<td>{{calcTotal}} руб.</td>
 	</tr>
 </table>

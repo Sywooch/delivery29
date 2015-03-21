@@ -214,3 +214,10 @@ a.desc:after {
     font-size: 18pt;
     font-family: "Open Sans", sans-serif;
 }
+
+.basket-category-icon, .basket-order-category-icon
+{
+    max-height:12pt;
+    /*position: absolute;*/
+    /*margin-left: -25px;*/
+}
