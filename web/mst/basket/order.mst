@@ -10,7 +10,7 @@
 	{{#items}}
 		<tr>
 			<td>
-				{{name}}
+				<img class="basket-order-category-icon" src="/img/categorys/{{category_id}}.png" alt="{{category_id}}"> {{name}}
 			</td>
             <td>
                 {{count}}
