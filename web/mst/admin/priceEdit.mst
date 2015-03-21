@@ -1,0 +1,10 @@
+<form onsubmit="editElement(event, {{id}})" class="form-inline">
+  <div class="form-group">
+    <div class="input-group" style="min-width:150px">
+        <input type="text" class="form-control" name="data[price]" placeholder="" value="{{value}}">
+        <div class="input-group-addon" onclick="$(this).parent().parent().parent().submit()" style="cursor:pointer">
+                <span class="glyphicon glyphicon-floppy-save"></span>
+        </div>
+    </div>
+  </div>
+</form>

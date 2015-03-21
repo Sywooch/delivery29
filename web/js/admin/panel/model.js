@@ -2,6 +2,7 @@
 function createActiveBtns()
 {
 	$.each( $('.js-column-active'), createActiveBtn );
+	$.each( $('.js-column-price'), createPriceEdit );
 }
 
 function createEditButton()
@@ -21,9 +22,31 @@ function createActiveBtn( key, obj )
 {
 	var data = {
 		"itemId":$(obj).attr('data-id'),
-		"active":$(obj).text() == "1" ? true : false,
+		"active":$(obj).text() == "1" ? true : false
 	};
 	loadTpl('/mst/admin/activeBtn.mst', data ,obj);
+}
+
+function createPriceEdit( key, obj )
+{
+    var data = {
+        "value":$(obj).text(),
+        "id":$(obj).attr('data-id')
+    };
+    loadTpl('/mst/admin/priceEdit.mst', data ,obj);
+}
+
+function editElement(event, id)
+{
+    event.preventDefault();
+    //console.log(id);
+    $.post(baseUrl+"/edit/?id="+id, $(event.target).serialize()).success( function() {
+        $(event.target).find('.form-group').addClass("has-success");
+        setTimeout( function () {$(event.target).find('.form-group').removeClass("has-success");}, 300 );
+    }).error( function () {
+        $(event.target).find('.form-group').addClass("has-error");
+        setTimeout( function () {$(event.target).find('.form-group').removeClass("has-error");}, 300 );
+    });
 }
 
 
