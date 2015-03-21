@@ -148,6 +148,7 @@ function removeFromChart(id)
 			chart.items.splice(id, 1);
 		}	
 	}
+    chart.defaultRewrite();
 	rewriteChart();
 }
 
