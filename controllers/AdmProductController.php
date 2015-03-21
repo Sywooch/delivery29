@@ -102,6 +102,7 @@ class AdmProductController extends Controller
             }
             else
             {
+                header("HTTP/1.1 400");
                 echo $this->render('create', array( 'model'=>$this->model, 'baseUrl'=>$this->baseUrl, 'error'=>$item->getErrors(), 'data'=>$item));
             }
         }
