@@ -30,6 +30,9 @@ if (!function_exists("isActive")) {
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
+    <meta name="title" content="Доставка еды из Макдоналдс и Старфудс">
+    <meta name="description" content="Доставка, гамбургеров, ролов, снеков и многого другого из Макдоналд и Старфудс в Архангельске">
+    <link rel="image_src" href="/img/logo.png" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
 </head>
 <body>
