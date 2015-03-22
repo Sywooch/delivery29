@@ -32,7 +32,7 @@ body {
 }
 
 .not-set {
-    color: #c55;
+    color: #cc5555;
     font-style: italic;
 }
 
@@ -160,7 +160,18 @@ a.desc:after {
 
 .on-add-item
 {
-	background:#EEFFEE !important;
+	background:#337ab7 !important;
+    -webkit-transition: background 0.2s ease-out 0.2s;
+    -moz-transition: background 0.2s ease-out 0.2s;
+    -o-transition: background 0.2s ease-out 0.2s;
+    transition: background 0.2s ease-out 0.2s;
+}
+
+#mobileToGoButton {
+    -webkit-transition: background 0.2s ease-out 0.2s;
+    -moz-transition: background 0.2s ease-out 0.2s;
+    -o-transition: background 0.2s ease-out 0.2s;
+    transition: background 0.2s ease-out 0.2s;
 }
 
 .fusking-button
@@ -171,6 +182,9 @@ a.desc:after {
     width: 100%;
 }
 
+/*
+Star foods styles
+*/
 .star-foods-product
 {
     border: 1px solid #CCC;
@@ -180,7 +194,7 @@ a.desc:after {
 }
 
 
-.star-foods-product:hover
+.star-foods-product:hover, .star-foods-product:active
 {
     background: #FFDDDD;
 }
@@ -226,4 +240,21 @@ a.desc:after {
     max-height:12pt;
     /*position: absolute;*/
     /*margin-left: -25px;*/
+}
+
+/*
+Mac dac styles
+*/
+
+.md-product
+{
+    display: inline-block;
+    width: 190px;
+    margin: 5px;
+}
+
+.md-product .ptitle {
+    font-size: 16px;
+    height: 44px;
+    font-family: 'Open Sans', Arial, sans-serif;
 }

@@ -5,7 +5,7 @@ $this->title = 'Доставка еды домой и в офисы Арханг
 <div class="container">
 	<div class="row">
 		<div class="col-sm-7 col-md-8 col-lg-9">
-		<div class="row">
+		<div class="row" style="text-align: center">
 		<?php 
 			if (!empty($arProduct))
 			{
@@ -20,12 +20,9 @@ $this->title = 'Доставка еды домой и в офисы Арханг
 		?>
 		</div>
             <div class="row">
-                <div class='col-xs-6'>
+                <div class='col-md-6'>
                     <h3>Доствка из Макдоналдс</h3>
                     <p>Доставим гамбургеры, ролы, картошку и многое другое из ресторана Макдоналд в архангельске</p>
-                </div>
-                <div class="col-xs-6">
-                    <p></p>
                 </div>
             </div>
 		</div>

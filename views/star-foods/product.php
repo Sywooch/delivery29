@@ -1,5 +1,5 @@
 <div
-    class="col-sm-6 col-xs-12 col-md-4 col-sl-3"
+    class="col-sm-6 col-xs-6 col-md-4 col-sl-3"
     id="product-<?php echo $data->id?>"
     data-price="<?php echo $data->price?>"
     data-name="<?php echo $data->name?>"

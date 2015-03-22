@@ -55,7 +55,7 @@
 </div>
 {{#hasItems}}
 <div class="visible-xs visible-sm fusking-button">
-    <a href="#basket" id="mobileGoToButton" class="btn btn-success btn-wide">Перейти в корзину</a>
+    <a href="#basket" id="mobileGoToButton" class="btn btn-success btn-wide">Перейти в корзину {{calcTotal}}&nbsp;руб.</a>
 </div>
 {{/hasItems}}
 <script>
