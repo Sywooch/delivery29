@@ -6,6 +6,6 @@
     data-category_id="<?php echo $data->category_id?>">
   	<div class="star-foods-product btn-space-top" 
   		onclick="addToChart(<?php echo $data->id?>)">
-  			<?php echo $data->name?> <div class="price"><?php echo $data->price?> руб.</div>
+  			<div class="price"><?php echo $data->price?> руб.</div> <?php echo $data->name?>
   	</div>
 </div>

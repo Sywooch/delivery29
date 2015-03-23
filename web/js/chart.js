@@ -35,6 +35,10 @@ var chart = {
 		}
 	},
 	"defIdRewrite":"",
+	"drawMobileButton":function () {
+		$("#mobileGoToButton").addClass("on-add-item");
+		setTimeout( function () { $("#mobileGoToButton").removeClass("on-add-item"); }, 200 );
+	},
 	setDefId: function (id) {
 		this.defIdRewrite = id;
 	},
@@ -135,6 +139,7 @@ function addToChart(id)
 		chart.items[id].count++;
 	}
 	rewriteChart();
+    chart.drawMobileButton();
 }
 
 function removeFromChart(id)

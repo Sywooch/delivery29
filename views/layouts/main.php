@@ -47,12 +47,17 @@ if (!function_exists("isActive")) {
                     'style' => "z-index:995",
                 ],
             ]);
-            echo Nav::widget([
-                'options' => ['class' => 'navbar-nav'],
-                'items' => [
-                    ['label' => 'Доставка еды из Макдоналдс и Старфудс домой или в офис ежедневнно с 16:00 до 23:00', 'url' => ['/']],
-                ],
-            ]);
+           ?>
+            <ul id="w1" class="navbar-nav nav">
+                <li>
+                    <a href="#">
+                        Доставка еды
+                        <span class="hidden-md hidden-sm hidden-xs">из Макдоналдс и Старфудс</span>
+                        <span class="hidden-sm hidden-xs">домой или в офис</span> ежедневнно с
+                        16:00 до 23:00</a>
+                </li>
+            </ul>
+            <?php
             echo Nav::widget([
                 'options' => ['class' => 'navbar-nav navbar-right'],
                 'items' => [
