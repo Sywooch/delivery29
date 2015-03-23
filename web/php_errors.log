@@ -1,0 +1,2 @@
+[18-Mar-2015 02:55:03 Europe/Moscow] PHP Fatal error:  Call to a member function delete() on null in /var/www/html/dostavka29test/controllers/AdmProductController.php on line 82
+[20-Mar-2015 18:15:48 Europe/Moscow] PHP Fatal error:  Cannot redeclare isActive() (previously declared in /var/www/html/dostavka29test/views/layouts/main.php:13) in /var/www/html/dostavka29test/views/layouts/main.php on line 21

@@ -35,6 +35,10 @@ var chart = {
 		}
 	},
 	"defIdRewrite":"",
+	"drawMobileButton":function () {
+		$("#modileGoToBasket").addClass("on-add-item");
+		setTimeout( function () { $("#mobileGoToBasket").removeClass("on-add-item"); }, 200 );
+	},
 	setDefId: function (id) {
 		this.defIdRewrite = id;
 	},
@@ -134,6 +138,7 @@ function addToChart(id)
 		var id = getItemInChartId(id);
 		chart.items[id].count++;
 	}
+	chart.drawMobileButton();
 	rewriteChart();
 }
 

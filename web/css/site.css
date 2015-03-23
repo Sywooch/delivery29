@@ -158,11 +158,17 @@ a.desc:after {
     margin-bottom: 5px;
 }
 
+.on-add-item
+{
+	background:#EEFFEE !important;
+}
+
 .fusking-button
 {
     position: fixed;
-    left: 5px;
-    bottom: 5px;
+    left: 0px;    
+    top: 1px;
+    width: 100%;
 }
 
 .star-foods-product
