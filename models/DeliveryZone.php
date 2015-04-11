@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "tbl_delivery_zone".
@@ -10,9 +11,10 @@ use Yii;
  * @property integer $id
  * @property string $name
  * @property double $delivery_price
+ * @property string $name_to
  * @property integer $active
  */
-class DeliveryZone extends \yii\db\ActiveRecord
+class DeliveryZone extends ActiveRecord
 {
     /**
      * @inheritdoc

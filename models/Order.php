@@ -3,6 +3,9 @@
 namespace app\models;
 
 use Yii;
+use \app\assets\OrderStatus;
+use \app\components\OrderNotice;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "tbl_order".
@@ -15,8 +18,9 @@ use Yii;
  * @property integer $session_id
  * @property double $total
  * @property integer $status
+ * @property DeliveryZone $zone
  */
-class Order extends \yii\db\ActiveRecord
+class Order extends ActiveRecord
 {
     /**
      * @inheritdoc
@@ -67,25 +71,36 @@ class Order extends \yii\db\ActiveRecord
             $total += $item->count * $item->product->price;
         }
         $this->total = $total;
-        $this->status = 2;
+        $this->status = OrderStatus::CREATED;
         $this->save();
         $this->notice();
     }
 
     public function notice()
     {
-        $x = new \app\components\OrderNotice;
+        $x = new OrderNotice;
         $this->created_at = date("Y-m-d H:i:s");
         $x->notice($this);
     }
 
     public function getItems()
     {
-        return $this->hasMany(\app\models\OrderData::className(), ['order_id'=>'id']);
+        return $this->hasMany(OrderData::className(), ['order_id'=>'id']);
     }
 
+    /**
+     * @return \app\models\DeliveryZone;
+     */
     public function getZone()
     {
-        return $this->hasOne(\app\models\DeliveryZone::className(), ['id'=>'zone_id']);
+        return $this->hasOne(DeliveryZone::className(), ['id'=>'zone_id']);
+    }
+
+    public function getDeliveryPrice() {
+        return $this->zone ? $this->zone->delivery_price : 0;
+    }
+
+    public function getDeliveryZone() {
+        return $this->zone ? $this->zone->name_to : "вникуда";
     }
 }

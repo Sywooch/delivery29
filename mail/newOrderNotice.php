@@ -1,4 +1,29 @@
-<?php 
+<?php
+/**
+ * @var array $deliveryZones
+ */
+/**
+ * @var \app\models\Order $order
+ */
+/**
+ * @param $zId
+ * @param $zoneArray
+ * @return float|int
+ */
+function getZoneById( $zId, $zoneArray )
+{
+    foreach ($zoneArray as $zone) {
+        /**
+         * @var \app\models\DeliveryZone $zone;
+         */
+        if ($zone->id == $zId) {
+            return $zone->delivery_price;
+        }
+    }
+
+    return 0;
+}
+
 	echo "#".$order->id." ".$order->created_at."\n";
 ?>
 <br>
@@ -53,4 +78,11 @@
 	}
 ?>
 ========================================<br>
-Итого без учета доставки: <?php echo $total?><br>
+Без учета доставки: <?php echo $total?><br>
+Взять с клиента (примерно): <?php echo $total+$order->getDeliveryPrice()?><br>
+Зоны доставки:
+<?php
+    foreach($deliveryZones as $zone) {
+        echo $zone->name." = ".$zone->delivery_price."р<br>";
+    }
+?>

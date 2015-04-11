@@ -4,13 +4,39 @@ use Yii;
 use app\models\Category;
 class Sms
 {
+
+    /**
+     * @param $zId
+     * @param $zoneArray
+     * @return float|int
+     */
+    public static function getZoneById( $zId, $zoneArray )
+    {
+        foreach ($zoneArray as $zone) {
+            /**
+             * @var \app\models\DeliveryZone $zone;
+             */
+            if ($zone->id == $zId) {
+                return $zone->delivery_price;
+            }
+        }
+
+        return 0;
+    }
+
 	//http://bytehand.com:3800/send?id=<ID>&key=<KEY>&to=<PHONE>&from=<SIGNATURE>&text=<TEXT>
+    /**
+     * @param \app\models\Order $order
+     */
 	public static function notice( $order )
 	{
 		if ( \Yii::$app->params['smsEnable'] != 'Y' )
 		{
 			return;
 		}
+
+        $zones = \app\models\DeliveryZone::getZones();
+
 		$text = "#".$order->id." ".$order->created_at."\n\r";
 		$text .= $order->tel."\n\r";
 		$text .= $order->address."\n\r";
@@ -42,8 +68,16 @@ class Sms
 
             $text .= $items;
         }
-		$text .= "=".$total;
-
+		$text .= "Итого: ".$total."\n\r";
+        $text .= "Взять с клиента: ".($total+$order->getDeliveryPrice())." ".$order->getDeliveryZone()."\n\r";
+        foreach ($zones as $zone) {
+            /**
+             * @var \app\models\DeliveryZone $zone
+             */
+            if ($order->zone->id != $zone->id) {
+                $text .= $zone->name_to.' '.$zone->delivery_price."\n\r";
+            }
+        }
 		$data = [
 			"<PHONE>" => urlencode(\Yii::$app->params['noticePhone']),
 			"<TEXT>" => urlencode($text),
@@ -53,6 +87,6 @@ class Sms
 		];
 		$tpl = "http://bytehand.com:3800/send?id=<ID>&key=<KEY>&to=<PHONE>&from=<SIGNATURE>&text=<TEXT>";
 		$url = strtr($tpl, $data);
-		file_get_contents($url);
+		@file_get_contents($url);
 	}
 }
