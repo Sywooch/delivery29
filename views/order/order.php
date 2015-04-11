@@ -5,6 +5,7 @@ $this->title = 'Доставка Архагельск';
  * @var \app\models\Order $order
  */
 ?>
+<script src="<?php echo \Yii::$app->urlManager->createUrl(['/js/order-helper.js'])?>"></script>
 <div class="container">
 	 <h1>Заказ нормер <?php echo  $order->id?></h1><hr>
 	<div class="row">
