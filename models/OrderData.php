@@ -11,6 +11,7 @@ use Yii;
  * @property integer $order_id
  * @property integer $item_id
  * @property integer $count
+ * @property Product $product
  */
 class OrderData extends \yii\db\ActiveRecord
 {
@@ -47,6 +48,6 @@ class OrderData extends \yii\db\ActiveRecord
 
     public function getProduct()
     {
-        return $this->hasOne(\app\models\Product::className(), ['id'=>'item_id']);
+        return $this->hasOne(Product::className(), ['id'=>'item_id']);
     }
 }

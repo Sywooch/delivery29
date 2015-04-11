@@ -2,6 +2,7 @@
 /* @var $this yii\web\View */
 $this->title = 'Оформление заказа';
 ?>
+<script src="<?php echo \Yii::$app->urlManager->createUrl(['/js/order-helper.js'])?>"></script>
 <div class="container">
     <div class="row">
         <div class="col-md-6 col-md-offset-3">

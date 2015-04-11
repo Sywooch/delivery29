@@ -4,8 +4,32 @@ use Yii;
 use app\models\Category;
 class Vk
 {
-	public static function notice( $order )
+    /**
+     * @param $zId
+     * @param $zoneArray
+     * @return float|int
+     */
+    public static function getZoneById( $zId, $zoneArray )
+    {
+        foreach ($zoneArray as $zone) {
+            /**
+             * @var \app\models\DeliveryZone $zone;
+             */
+            if ($zone->id == $zId) {
+                return $zone->delivery_price;
+            }
+        }
+
+        return 0;
+    }
+
+
+    /**
+     * @param \app\models\Order $order
+     */
+    public static function notice( $order )
 	{
+        $zones = \app\models\DeliveryZone::getZones();
 		$text = "";
 		$text .= "#".$order->id." ".$order->created_at."\n";
 		$text .=  $order->tel."\n";
@@ -41,7 +65,16 @@ class Vk
 			$text .= $items;
 		}
 		$text .= "========================================\n";
-		$text .=  "Итого без учета доставки: $total \n";
+		$text .= "Итого без учета доставки: $total \n";
+        $text .= "Взять с клиента: ".($total+$order->getDeliveryPrice())." ".$order->getDeliveryZone()."\n";
+        foreach ($zones as $zone) {
+            /**
+             * @var \app\models\DeliveryZone $zone
+             */
+            if ($zone->id != $order->zone->id) {
+                $text .= $zone->name_to.' '.$zone->delivery_price."\n";
+            }
+        }
 		self::sendVkMessage($text);
 	}
 
