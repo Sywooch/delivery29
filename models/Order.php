@@ -96,8 +96,29 @@ class Order extends ActiveRecord
         return $this->hasOne(DeliveryZone::className(), ['id'=>'zone_id']);
     }
 
+    public function hasManyPlace() {
+        if ($this->items) {
+            $place = array();
+            foreach ($this->items as $item) {
+                /**
+                 * @var OrderData $item
+                 */
+                if (isset( $place[ $item->product->category_id ]))
+                    $place[ $item->product->category_id ]++;
+                else
+                    $place[ $item->product->category_id ] = 1;
+            }
+            return count($place) > 1;
+        }
+        return false;
+    }
+
     public function getDeliveryPrice() {
-        return $this->zone ? $this->zone->delivery_price : 0;
+        $p = $this->zone ? $this->zone->delivery_price : 0;
+        if ($this->hasManyPlace()) {
+            $p +=  Yii::$app->params['ADD_DELIVERY_PRICE'];
+        }
+        return $p;
     }
 
     public function getDeliveryZone() {
