@@ -28,6 +28,8 @@ if (!function_exists("isActive")) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
+    <meta name="description" content="<?php echo \app\assets\ConfigHelper::getDescription()?>">
+    <meta name="keywords" content="<?php echo \app\assets\ConfigHelper::getKeywords()?>">
     <?php $this->head() ?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
@@ -71,12 +73,12 @@ NavBar::end();
 </footer>
 
 <?php $this->endBody() ?>
-<script src="<?php \Yii::$app->urlManager->createUrl(['/js/mustache.min.js']);?>"></script>
+<script src="<?php echo \Yii::$app->urlManager->createUrl(['/js/mustache.min.js']);?>"></script>
 <?php echo $this->render('delivery-zone')?>
 <script>
     var ADD_DELIVERY_PRICE = '<?php echo Yii::$app->params['ADD_DELIVERY_PRICE']?>';
 </script>
-<script src="<?php \Yii::$app->urlManager->createUrl(['/js/chart.js']);?>"></script>
+<script src="<?php echo \Yii::$app->urlManager->createUrl(['/js/chart.js']);?>"></script>
 <!-- Yandex.Metrika counter --><script type="text/javascript">(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter29055700 = new Ya.Metrika({id:29055700, webvisor:true, clickmap:true, trackLinks:true, accurateTrackBounce:true}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="//mc.yandex.ru/watch/29055700" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
 </body>
 </html>
