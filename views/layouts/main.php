@@ -86,7 +86,7 @@ if (!function_exists("isActive")) {
 
     <footer class="footer">
         <div class="container">
-            <p class="pull-left">&copy; Доставка еды из Макдональдс Старфудс в Архангельске</p>
+            <p class="pull-left">&copy; Доставка еды из Макдональдс Старфудс в Архангельске <?php \app\assets\ConfigHelper::getPartnerEmail();?> - контакт для партнеров</p>
             
         </div>
     </footer>
