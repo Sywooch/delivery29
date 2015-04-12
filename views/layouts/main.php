@@ -2,7 +2,6 @@
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
-use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
 
 /* @var $this \yii\web\View */
@@ -32,11 +31,10 @@ if (!function_exists("isActive")) {
     <?php $this->head() ?>
     <meta name="title" content="Доставка еды из Макдоналдс и Старфудс">
     <meta name="description" content="Доставка, гамбургеров, ролов, снеков и многого другого из Макдоналдс и Старфудс в Архангельске">
-    <link rel="image_src" href="/img/logo.png" />
+    <link rel="image_src" href="<?php echo \Yii::$app->urlManager->createUrl(['/img/logo.png']); ?>" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
 </head>
 <body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <?php $this->beginBody() ?>
         <?php
             NavBar::begin([
@@ -54,7 +52,7 @@ if (!function_exists("isActive")) {
                         Доставка еды
                         <span class="hidden-md hidden-sm hidden-xs">из Макдоналдс и Старфудс</span>
                         <span class="hidden-sm hidden-xs">домой или в офис</span> ежедневнно с
-                        16:00 до 23:00</a>
+                        11:00 до 23:00</a>
                 </li>
             </ul>
             <?php
@@ -72,7 +70,7 @@ if (!function_exists("isActive")) {
             <div class="col-sm-7 col-md-8 col-lg-9">
                 <ul class="nav nav-tabs">
                     <li class="<?php echo isActive('/')?>"><a class='md-button' href="/">Макдоналдс</a></li>
-                    <li class="<?php echo isActive('/star-foods')?>"><a  class='sf-button' href="/star-foods">Старфудс</a></li>
+                    <li class="<?php echo isActive('/star-foods')?>"><a  class='sf-button' href="<?php echo \Yii::$app->urlManager->createUrl(['/star-foods']); ?>">Старфудс</a></li>
                 </ul>
                 <br>
             </div>
@@ -95,12 +93,12 @@ if (!function_exists("isActive")) {
     </footer>
 
 <?php $this->endBody() ?>
-<script src="/js/mustache.min.js"></script>
+<script src="<?php echo \Yii::$app->urlManager->createUrl(['/js/mustache.min.js']); ?>"></script>
 <?php echo $this->render('delivery-zone')?>
 <script>
     var ADD_DELIVERY_PRICE = '<?php echo Yii::$app->params['ADD_DELIVERY_PRICE']?>';
 </script>
-<script src="/js/chart.js"></script>
+<script src="<?php echo \Yii::$app->urlManager->createUrl(['/js/chart.js']); ?>"></script>
 <?php if($_SERVER['HTTP_HOST'] != "dostavka29.loc"):?>
 <!-- Yandex.Metrika counter --><script type="text/javascript">(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter29055700 = new Ya.Metrika({id:29055700, webvisor:true, clickmap:true, trackLinks:true, accurateTrackBounce:true}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="//mc.yandex.ru/watch/29055700" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
 <?php endif;?>
