@@ -17,4 +17,9 @@ class ConfigHelper {
     public static function getAddDeliveryPrice() {
        return \Yii::$app->params['ADD_DELIVERY_PRICE'];
     }
+
+    public static function getPartnerEmail()
+    {
+        return "ad@dostavka29.ru";
+    }
 }

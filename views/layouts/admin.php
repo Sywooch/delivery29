@@ -2,7 +2,6 @@
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
-use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
 
 /* @var $this \yii\web\View */
@@ -49,13 +48,12 @@ AppAsset::register($this);
 
     <footer class="footer">
         <div class="container">
-            <p class="pull-left">&copy; Посты из соц сетей на карте <?= date('Y') ?></p>
             <p class="pull-right"><?= Yii::powered() ?></p>
         </div>
     </footer>
 
 <?php $this->endBody() ?>
 </body>
-<script src="/js/mustache.min.js"></script>
+<script src="<?php echo \Yii::$app->urlManager->createUrl(['/js/mustache.min.js']);?>"></script>
 </html>
 <?php $this->endPage() ?>
