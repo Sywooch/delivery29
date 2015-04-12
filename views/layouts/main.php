@@ -32,7 +32,6 @@ if (!function_exists("isActive")) {
     <meta name="title" content="Доставка еды из Макдоналдс и Старфудс">
     <meta name="description" content="Доставка, гамбургеров, ролов, снеков и многого другого из Макдоналдс и Старфудс в Архангельске">
     <link rel="image_src" href="<?php echo \Yii::$app->urlManager->createUrl(['/img/logo.png']); ?>" />
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
 </head>
 <body>
 <?php $this->beginBody() ?>
@@ -105,3 +104,4 @@ if (!function_exists("isActive")) {
 </body>
 </html>
 <?php $this->endPage() ?>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
