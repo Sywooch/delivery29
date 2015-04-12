@@ -28,6 +28,8 @@ if (!function_exists("isActive")) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
+    <meta name="description" content="<?php echo \app\assets\ConfigHelper::getDescription()?>">
+    <meta name="keywords" content="<?php echo \app\assets\ConfigHelper::getKeywords()?>">
     <?php $this->head() ?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>

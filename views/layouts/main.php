@@ -30,7 +30,8 @@ if (!function_exists("isActive")) {
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
     <meta name="title" content="Доставка еды из Макдоналдс и Старфудс">
-    <meta name="description" content="Доставка, гамбургеров, ролов, снеков и многого другого из Макдоналдс и Старфудс в Архангельске">
+    <meta name="description" content="<?php echo \app\assets\ConfigHelper::getDescription()?>">
+    <meta name="keywords" content="<?php echo \app\assets\ConfigHelper::getKeywords()?>">
     <link rel="image_src" href="<?php echo \Yii::$app->urlManager->createUrl(['/img/logo.png']); ?>" />
 </head>
 <body>
