@@ -65,7 +65,7 @@ NavBar::end();
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; Доставка еды из Макдональдс Старфудс в Архангельске <?php \app\assets\ConfigHelper::getPartnerEmail();?> - контакт для партнеров</p>
+        <p class="pull-left">&copy; Доставка еды из Макдональдс Старфудс в Архангельске <?php echo \app\assets\ConfigHelper::getPartnerEmail();?> - контакт для партнеров</p>
 
     </div>
 </footer>
