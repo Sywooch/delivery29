@@ -1,8 +1,7 @@
 /**
  * Created by iVan on 11.04.2015.
  */
-$(document).ready(
-    function () {
+document.addEventListener("DOMContentLoaded", function() {
         $('.js-onclick-basket').click(onClickMacDack);
     }
 );
