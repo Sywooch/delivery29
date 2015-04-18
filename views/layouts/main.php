@@ -28,7 +28,7 @@ if (!function_exists("isActive")) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
-    <?php $this->head() ?>
+    <link href="<?php echo \Yii::$app->urlManager->createUrl('/css/style.css?v1'). \app\assets\ConfigHelper::getVer()?>" rel="stylesheet">
     <meta name="title" content="Доставка еды из Макдоналдс и Старфудс">
     <meta name="description" content="<?php echo \app\assets\ConfigHelper::getDescription()?>">
     <meta name="keywords" content="<?php echo \app\assets\ConfigHelper::getKeywords()?>">

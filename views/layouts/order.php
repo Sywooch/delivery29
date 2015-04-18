@@ -30,7 +30,7 @@ if (!function_exists("isActive")) {
     <title><?= Html::encode($this->title) ?></title>
     <meta name="description" content="<?php echo \app\assets\ConfigHelper::getDescription()?>">
     <meta name="keywords" content="<?php echo \app\assets\ConfigHelper::getKeywords()?>">
-    <?php $this->head() ?>
+    <link href="<?php echo \Yii::$app->urlManager->createUrl('/css/style.css?v1'). \app\assets\ConfigHelper::getVer()?>" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
 </head>

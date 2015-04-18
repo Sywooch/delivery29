@@ -8,3 +8,6 @@ requirements.php
 web/media
 web/assets
 params.json
+web/css
+web/fonts
+frontend/node_modules
