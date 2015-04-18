@@ -9,25 +9,38 @@
 namespace app\assets;
 
 
-class ConfigHelper {
+class ConfigHelper
+{
     /**
      * Возарвщяет дополнительную стоимость при доставке из разных ресторанов
      * @return float Дополнительную стоипость при доствек из разных ресторанов
      */
-    public static function getAddDeliveryPrice() {
-       return \Yii::$app->params['ADD_DELIVERY_PRICE'];
+    public static function getAddDeliveryPrice()
+    {
+        return \Yii::$app->params['ADD_DELIVERY_PRICE'];
     }
 
+    /**
+     * @return string Емейл для связи с партнерами
+     */
     public static function getPartnerEmail()
     {
         return "ad@dostavka29.ru";
     }
 
-    public static function getKeywords() {
+    /**
+     * @return string СЕО ключевые слова
+     */
+    public static function getKeywords()
+    {
         return "доставка суши архангельск, архангельск доставка пиццы, архангельск доставка еды, доставка архангельск роллы, доставка старфудс архангельск, доставка макдональдс архангельск, доставка комплексных обедов архангельск, доставка обедов архангельск, заказать еду в архангельске, доставка еды в архангельске, доставка пиццы и суши архангельск, доставка в офис архангельск, доставка обедов в офис архангельск, доставка гамбургеров архангельск, заказать макдональдс архангельск, доставка макдак архангельск";
     }
 
-    public static function getDescription() {
+    /**
+     * @return string СЕО описание
+     */
+    public static function getDescription()
+    {
         return "Быстрая доставка еды в Архангельске. Заказать Макдональдс и Старфудс с доставкой на дом и в офис по Архангельску.";
     }
 }
