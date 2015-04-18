@@ -7,3 +7,4 @@ composer.lock
 requirements.php
 web/media
 web/assets
+params.json
