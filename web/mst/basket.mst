@@ -31,15 +31,7 @@
         <tr>
             <td colspan="3">
                 <hr>
-                <a href="/order" class="btn btn-primary btn-wide btn-space-top">Заказать {{calcTotal}}&nbsp;руб.</a>
-            </td>
-        <tr>
-            <td colspan="3">
-                {{#zones}}
-                <button onclick="chart.setActiveZone({{id}})" class="{{#isActiveZone}}btn-success{{/isActiveZone}}{{^isActiveZone}}btn-default{{/isActiveZone}} btn btn-xs btn-wide btn-space-top">
-                    Доставка {{name_to}} <span>{{delivery_price}}&nbsp;руб.</span>
-                </button>
-                {{/zones}}
+                <a href="/order" class="btn btn-primary btn-wide btn-space-top">Заказать {{calcTotalWithoutDelivery}}&nbsp;руб.</a>
             </td>
         </tr>
         {{/hasItems}}
