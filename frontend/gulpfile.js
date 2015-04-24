@@ -11,6 +11,7 @@ var gulp = require('gulp'),
     srcFolder = './web';
 var less = require('gulp-less');
 var path = require('path');
+var minifyCss = require('gulp-minify-css');
 
 gulp.task('connect', function() {
     return connect.server({
@@ -28,6 +29,7 @@ gulp.task('css', function() {
             }))
         .pipe(concat('style.css'))
         .pipe(prefix('> 1%'))
+        .pipe(minifyCss({compatibility: 'ie8'}))
         .pipe(gulp.dest(buildFolder+'/css'))
         .pipe(connect.reload())
         .pipe(notify("Css succeed"));
