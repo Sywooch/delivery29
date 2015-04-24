@@ -36,7 +36,7 @@
 		<select id="delivery-zone" class="form-control" onchange="chart.setActiveZone(this.value)">
 		{{#zones}}
                 <option value="{{id}}" {{#isActiveZone}}selected="selected"{{/isActiveZone}}>
-                    {{name_to}} {{delivery_price}} руб.
+                    {{name_to}}
                 </option>
         {{/zones}}
 		</td>
@@ -44,13 +44,13 @@
     {{#haveManyDeliveryPoints}}
     <tr>
         <td colspan="3" style="vertical-align: middle;">+ Доставка из разных ресторанов</td>
-        <td>
+        <td style="text-align:right">
         {{getAddPrice}}&nbsp;руб
         </td>
     </tr>
     {{/haveManyDeliveryPoints}}
 	<tr>
 		<td colspan="3"><b>Итого:</b></td>
-		<td>{{calcTotal}} руб.</td>
+		<td style="text-align:right">{{calcTotal}} руб. <span style="color:#CCC">({{ getDeliveryPrice }} руб. доставка)</span></td>
 	</tr>
 </table>

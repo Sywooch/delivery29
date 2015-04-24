@@ -2,9 +2,12 @@ var chart = {
 	items:[],
 	calcTotal: function () {
 		var total = chart.getDeliveryPrice();
-		for (var x in this.items)
+		var s = 0;
+        var item;
+        for (var x in this.items)
 		{
-			var s = this.items[x].price*this.items[x].count;
+            item = this.items[x];
+			s = item.price*item.count;
 			total += s;
 		}
         if (chart.haveManyDeliveryPoints())
@@ -13,6 +16,9 @@ var chart = {
         }
 		return total;
 	},
+    calcTotalWithoutDelivery: function () {
+      return chart.calcTotal() - chart.getDeliveryPrice();
+    },
 	getSum:function() {
 		return this.price*this.count;
 	},
