@@ -6,7 +6,6 @@ use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use app\models\admin\LoginForm;
-use app\models\Product;
 
 class AdminController extends Controller
 {
@@ -16,20 +15,20 @@ class AdminController extends Controller
          return [
             'access' => [
                 'class' => AccessControl::className(),
-                 'denyCallback' => function ($rule, $action) {
+                 'denyCallback' => function () {
                     echo $this->render("login");
                  },
                 // 'only' => ['login', 'logout'],
                 'rules' => [
                     [
                         'allow' => true,
-                        'actions' => ['login'],
-                        'roles' => ['?'],
+                        'actions' => ['logout','index','create', 'delete', '*'],
+                        'roles' => ['@'],
                     ],
                     [
                         'allow' => true,
-                        'actions' => ['logout','index','create', 'delete', '*'],
-                        'roles' => ['@'],
+                        'actions' => ['login'],
+                        'roles' => ['?'],
                     ],
                     [
                         'allow' => false,

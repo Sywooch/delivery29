@@ -50,7 +50,7 @@ if (!function_exists("isActive")) {
                 <li>
                     <a href="#">
                         Доставка еды
-                        <span class="hidden-md hidden-sm hidden-xs">из Макдоналдс и Старфудс</span>
+                        <span class="hidden-md hidden-sm hidden-xs">из Мак и Стар</span>
                         <span class="hidden-sm hidden-xs">домой или в офис</span> ежедневнно с
                         11:00 до 23:00</a>
                 </li>
@@ -69,8 +69,8 @@ if (!function_exists("isActive")) {
         <div class="container">
             <div class="col-sm-7 col-md-8 col-lg-9">
                 <ul class="nav nav-tabs">
-                    <li class="<?php echo isActive('/')?>"><a class='md-button' href="/">Макдоналдс</a></li>
-                    <li class="<?php echo isActive('/star-foods')?>"><a  class='sf-button' href="<?php echo \Yii::$app->urlManager->createUrl(['/star-foods']); ?>">Старфудс</a></li>
+                    <li class="<?php echo isActive('/')?>"><a class='md-button' href="/">Мак</a></li>
+                    <li class="<?php echo isActive('/star-foods')?>"><a  class='sf-button' href="<?php echo \Yii::$app->urlManager->createUrl(['/star-foods']); ?>">Стар</a></li>
                 </ul>
                 <br>
             </div>
@@ -80,7 +80,7 @@ if (!function_exists("isActive")) {
 
     <footer class="footer">
         <div class="container">
-            <p class="pull-left">&copy; Доставка еды из Макдональдс Старфудс в Архангельске <?php echo \app\assets\ConfigHelper::getPartnerEmail();?> - контакт для партнеров</p>
+            <p class="pull-left">&copy; Доставка еды из Мак и Стар в Архангельске <?php echo \app\assets\ConfigHelper::getPartnerEmail();?> - контакт для партнеров</p>
         </div>
     </footer>
 
