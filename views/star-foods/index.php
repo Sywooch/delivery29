@@ -21,7 +21,7 @@ $this->title = 'Доставка еды домой и в офисы Арханг
 		</div>
             <div class="row">
                 <div class='col-md-6'>
-                    <h3>Доствка из Старфудс</h3>
+                    <h3>Доствка из Стар</h3>
                     <p>Доставка бургеров, роллов, хот-догов, снеков, соусов, салатов из ресторана Star Foods в Архангельске</p>
                 </div>
             </div>
@@ -37,7 +37,7 @@ $this->title = 'Доставка еды домой и в офисы Арханг
 	</div>
 </div>
 <script>
-    document.addEventListener("DOMContentLoaded", function(event) { 
+    document.addEventListener("DOMContentLoaded", function() {
     	loadChart();
     	rewriteChart();
     	chart.defaultRewrite = function () { rewriteChart(); }

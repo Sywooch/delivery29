@@ -7,3 +7,8 @@ composer.lock
 requirements.php
 web/media
 web/assets
+config/params.json
+web/css
+web/fonts
+frontend/node_modules
+.idea
