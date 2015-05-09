@@ -2,6 +2,7 @@
 
 namespace app\models;
 
+use app\assets\DiscountHelper;
 use Yii;
 use \app\assets\OrderStatus;
 use \app\components\OrderNotice;
@@ -123,5 +124,12 @@ class Order extends ActiveRecord
 
     public function getDeliveryZone() {
         return $this->zone ? $this->zone->name_to : "вникуда";
+    }
+
+    /**
+     * true - если это 5 заказ от клиента
+     */
+    public function isPromo5Order() {
+        return DiscountHelper::promo5order($this->id);
     }
 }

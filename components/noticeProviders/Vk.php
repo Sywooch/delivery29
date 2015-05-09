@@ -35,6 +35,8 @@ class Vk
 		$text .=  $order->tel."\n";
 		$text .=  $order->address."\n";
 		$text .=  $order->comment."\n";
+        if ($order->isPromo5Order())
+            $text .= "5 заказ доставка - басплатная \n";
 		$text .= "Состав заказа\n";
 		$text .= "========================================\n";
 		$total = 0;

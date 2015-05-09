@@ -41,6 +41,8 @@ class Sms
 		$text .= $order->tel."\n\r";
 		$text .= $order->address."\n\r";
 		$text .= $order->comment."\n\r";
+        if ($order->isPromo5Order())
+            $text .= "5 заказ доставка - басплатная \n\r";
 		$total = 0;
         $cat = [];
         foreach ( $order->items as $item )

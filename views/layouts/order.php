@@ -81,5 +81,6 @@ NavBar::end();
 <script src="<?php echo \Yii::$app->urlManager->createUrl(['/js/chart.js']);?>"></script>
 <?php echo $this->render('counters'); ?>
 </body>
+<script src="<?php echo \Yii::$app->urlManager->createUrl(['/js/plugins/jquery.maskedinput.min.js'])?>"></script>
 </html>
 <?php $this->endPage() ?>
