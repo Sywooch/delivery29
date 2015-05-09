@@ -12,6 +12,7 @@ $this->title = 'Оформление заказа';
             </div>
             <h3>Если все верно, введите ваш адрес и телефон</h3><hr>
             <form id="order-from" onsubmit="makeOrder(); return false;" class="form-horizontal">
+                <input type="hidden" name="_csrf" value="<?php echo \Yii::$app->request->getCsrfToken()?>" />
                 <div class="form-group" id="address">
                     <label for="address" class="col-sm-3 control-label">Адрес</label>
                     <div class="col-sm-9">
@@ -59,7 +60,7 @@ $this->title = 'Оформление заказа';
     </div>
 </div>
 <script>
-    document.addEventListener("DOMContentLoaded", function (event) {
+    document.addEventListener("DOMContentLoaded", function () {
         loadChart();
         printChart('/mst/basket/order.mst', '#chart-data');
         chart.defaultRewrite = function () {
@@ -80,6 +81,8 @@ $this->title = 'Оформление заказа';
             });
             return o;
         };
+        var tel =  $('#tel').find('> div > input');
+       tel.mask("+7 (999) 999 99 99");
     });
 
     function clearError( obj )
@@ -146,7 +149,7 @@ $this->title = 'Оформление заказа';
     }
 
     function postOrder(data) {
-        $.post("/order/make", {"data": data}, function (data) {
+        $.post("/order/make", {"data": data, "_csrf":"<?php echo \Yii::$app->request->getCsrfToken()?>"}, function (data) {
             chart.removeAll();
             $('.js-make-order-success').fadeIn(200);
             window.location = "/order/success?id=" + data.response;

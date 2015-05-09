@@ -30,6 +30,8 @@ $this->title = 'Доставка еды домой и в офисы Арханг
 			<div id="basket" style="">
 				
 			</div>
+
+           <?php echo $this->render("../global/left-promo.php")?>
 		</div>
 	</div>
 	<div class="row">

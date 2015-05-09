@@ -81,6 +81,9 @@ function getZoneById( $zId, $zoneArray )
 Без учета доставки: <?php echo $total?><br>
 Взять с клиента (примерно): <?php echo $total+$order->getDeliveryPrice()?><br>
 Зоны доставки:
+<?php if ($order->isPromo5Order()):?>
+5 заказ доставка бесплатная
+<?php endif;?>
 <?php
     foreach($deliveryZones as $zone) {
         echo $zone->name." = ".$zone->delivery_price."р<br>";
