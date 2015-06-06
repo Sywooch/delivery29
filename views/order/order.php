@@ -71,7 +71,7 @@ $this->title = 'Доставка Архагельск';
 						<li>
 							Дождитесь звонка нашего опаратора
 						</li>
-						<li>Если оператор долго не звонит ознакомтесь с <a href="<?php echo \Yii::$app->urlManager->createUrl(['static-page/index','page'=>'work']);?>">режимом работы</a></li>
+						<li>Если оператор не перезвонил через 10 минут позвоните по номеру +7&nbsp;911&nbsp;575&nbsp;56&nbsp;85<br><a href="<?php echo \Yii::$app->urlManager->createUrl(['static-page/index','page'=>'work']);?>">режим работы службы доставки</a></li>
 					</ul>
 				</div>
 			</div>
