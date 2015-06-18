@@ -13,6 +13,7 @@ use yii\db\ActiveRecord;
  * @property double $delivery_price
  * @property string $name_to
  * @property integer $active
+ * @property integer $discount
  */
 class DeliveryZone extends ActiveRecord
 {
@@ -31,7 +32,7 @@ class DeliveryZone extends ActiveRecord
     {
         return [
             [['delivery_price'], 'number'],
-            [['active', 'sort'], 'integer'],
+            [['active', 'sort', 'discount'], 'integer'],
             [['name','name_to'], 'string', 'max' => 255]
         ];
     }
@@ -48,6 +49,7 @@ class DeliveryZone extends ActiveRecord
             'active' => 'Active',
             'name_to' => 'Доставить в',
             'sort' => 'Сортировка',
+            'discount' => 'Скидка',
         ];
     }
 

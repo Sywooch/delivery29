@@ -31,14 +31,7 @@ var chart = {
 		}
 	},
 	hasItems: function () {
-		if (this.items.length > 0)
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
+		return this.items.length > 0;
 	},
 	"defIdRewrite":"",
 	"drawMobileButton":function () {
@@ -86,6 +79,14 @@ var chart = {
 		var activeZone = chart.getActiveZone();
 		return activeZone.delivery_price;
 	},
+    getDiscount: function () {
+        var activeZone = chart.getActiveZone();
+        return activeZone.discount;
+    },
+    getOldPrice: function () {
+        var activeZone = chart.getActiveZone();
+        return (activeZone.discount/100+1)*activeZone.delivery_price;
+    },
 	setActiveZone:function(id)
 	{
 		chart.activeZone = id;

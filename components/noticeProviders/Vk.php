@@ -1,8 +1,11 @@
 <?php
 namespace app\components\noticeProviders;
+use app\components\AbstractProvider;
+use app\models\DeliveryZone;
+use app\models\Order;
 use Yii;
 use app\models\Category;
-class Vk
+class Vk extends AbstractProvider
 {
     /**
      * @param $zId
@@ -13,7 +16,7 @@ class Vk
     {
         foreach ($zoneArray as $zone) {
             /**
-             * @var \app\models\DeliveryZone $zone;
+             * @var DeliveryZone $zone;
              */
             if ($zone->id == $zId) {
                 return $zone->delivery_price;
@@ -27,9 +30,9 @@ class Vk
     /**
      * @param \app\models\Order $order
      */
-    public static function notice( $order )
+    public function notice(Order $order )
 	{
-        $zones = \app\models\DeliveryZone::getZones();
+        $zones = DeliveryZone::getZones();
 		$text = "";
 		$text .= "#".$order->id." ".$order->created_at."\n";
 		$text .=  $order->tel."\n";
@@ -71,7 +74,7 @@ class Vk
         $text .= "Взять с клиента: ".($total+$order->getDeliveryPrice())." ".$order->getDeliveryZone()."\n";
         foreach ($zones as $zone) {
             /**
-             * @var \app\models\DeliveryZone $zone
+             * @var DeliveryZone $zone
              */
             if ($zone->id != $order->zone->id) {
                 $text .= $zone->name_to.' '.$zone->delivery_price."\n";

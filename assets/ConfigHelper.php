@@ -48,6 +48,6 @@ class ConfigHelper
      * @return string Уникальный тег для каждого коомита
      */
     public static function getVer() {
-        return 2;
+        return 3;
     }
 }

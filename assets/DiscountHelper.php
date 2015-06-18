@@ -16,6 +16,12 @@ use app\models\Order;
  * Расчет скидок к закзам
  */
 class DiscountHelper {
+
+    /**
+     * Бесплатная доставка каждый 5 заказ
+     * @param $orderId
+     * @return bool
+     */
     public static function promo5order($orderId) {
         $order = Order::find()->where(['id'=>$orderId])->one();
         if ($order)
