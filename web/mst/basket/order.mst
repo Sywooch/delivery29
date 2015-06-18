@@ -41,6 +41,18 @@
         {{/zones}}
 		</td>
 	</tr>
+    <tr>
+        <td colspan="3" style="vertical-align: middle;">Доставка</td>
+            <td style="text-align:right">
+            {{#getDiscount}}
+                <del>{{ getOldPrice }}&nbsp;руб</del>
+                <span class="text-danger">{{getDeliveryPrice}}&nbsp;руб.</span>
+            {{/getDiscount}}
+            {{^getDiscount}}
+                {{getDeliveryPrice}}&nbsp;руб.
+            {{/getDiscount}}
+        </td>
+    </tr>
     {{#haveManyDeliveryPoints}}
     <tr>
         <td colspan="3" style="vertical-align: middle;">+ Доставка из разных ресторанов</td>
@@ -51,6 +63,6 @@
     {{/haveManyDeliveryPoints}}
 	<tr>
 		<td colspan="3"><b>Итого:</b></td>
-		<td style="text-align:right">{{calcTotal}} руб. <span style="color:#CCC">({{ getDeliveryPrice }} руб. доставка)</span></td>
+		<td style="text-align:right">{{calcTotal}} руб.</td>
 	</tr>
 </table>

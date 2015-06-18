@@ -1,8 +1,10 @@
 <?php
 namespace app\components\noticeProviders;
+use app\components\AbstractProvider;
+use app\models\Order;
 use Yii;
 use app\models\Category;
-class Sms
+class Sms extends AbstractProvider
 {
 
     /**
@@ -28,7 +30,7 @@ class Sms
     /**
      * @param \app\models\Order $order
      */
-	public static function notice( $order )
+	public function notice(Order $order )
 	{
 		if ( \Yii::$app->params['smsEnable'] != 'Y' )
 		{

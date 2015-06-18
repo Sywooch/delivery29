@@ -1,6 +1,7 @@
 <?php
 namespace app\components;
 
+use app\models\Order;
 use Yii;
 
 class OrderNotice
@@ -12,10 +13,22 @@ class OrderNotice
 		"app\\components\\noticeProviders\\Vk",
 	];
 
-	public function notice( $order )
+    private $skipProviders = [];
+
+    public function __construct($skipProviders = []) {
+        $this->skipProviders = $skipProviders;
+    }
+
+	public function notice( Order $order )
 	{
-		foreach ($this->noticeProviders as $provider) {
-			$provider::notice( $order );
-		}
+		foreach ($this->noticeProviders as $providerClass) {
+            if ( !in_array($providerClass, $this->skipProviders) ) {
+                /**
+                 * @var AbstractProvider $provider
+                 */
+                $provider = new $providerClass;
+                $provider->notice($order);
+            }
+        }
 	}
 }

@@ -1,6 +1,9 @@
 <?php
 
-$model = "app\models\DeliveryZone";
+
+use yii\db\ActiveRecord;
+
+$model = "app\\models\\DeliveryZone";
 $url = "/delivery-zone";
 
 function dg($key, $def)
@@ -11,7 +14,7 @@ function dg($key, $def)
 	}
 	else
 	{
-		return $_GET[$ke];
+		return $_GET[$key];
 	}
 }
 	$sort = dg('sort', 'sort');
@@ -19,7 +22,9 @@ function dg($key, $def)
 	$sortType = dg('sortType', 'ASC');
 	$pSize = dg('pageSize', 50);
 	define("PAGE_SIZE", $pSize);
-
+/**
+ * @var ActiveRecord $model
+ */
 	$data = $model::find()->orderBy("$sort $sortType")->limit(PAGE_SIZE)->offset($page*PAGE_SIZE)->all();
 ?>
 <div class="container">

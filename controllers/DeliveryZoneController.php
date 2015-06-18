@@ -77,7 +77,7 @@ class DeliveryZoneController extends Controller
 
     public function actionDelete( $id )
     {
-        $item = DeliveryZone::find()->where(['id'=>$id])->one()->delete();
+        DeliveryZone::find()->where(['id'=>$id])->one()->delete();
     }
 
     public function actionEdit( $id )

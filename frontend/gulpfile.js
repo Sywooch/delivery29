@@ -22,12 +22,26 @@ gulp.task('connect', function() {
 });
 
 gulp.task('css', function() {
-    gulp.src(srcFolder + "/**/[^_]*.less")
+    gulp.src(srcFolder + "/basic/**/[^_]*.less")
         .pipe(plumber({errorHandler: notify.onError("Css error: <%= error.message %>")}))
         .pipe(less({
-              paths: [ path.join(__dirname, 'less', 'includes') ]
-            }))
+            paths: [ path.join(__dirname, 'less', 'includes') ]
+        }))
         .pipe(concat('style.css'))
+        .pipe(prefix('> 1%'))
+        .pipe(minifyCss({compatibility: 'ie8'}))
+        .pipe(gulp.dest(buildFolder+'/css'))
+        .pipe(connect.reload())
+        .pipe(notify("Css succeed"));
+});
+
+gulp.task('css.hand-made', function() {
+    gulp.src(srcFolder + "/hand-made/**/[^_]*.less")
+        .pipe(plumber({errorHandler: notify.onError("Css error: <%= error.message %>")}))
+        .pipe(less({
+            paths: [ path.join(__dirname, 'less', 'includes') ]
+        }))
+        .pipe(concat('style.hand-made.css'))
         .pipe(prefix('> 1%'))
         .pipe(minifyCss({compatibility: 'ie8'}))
         .pipe(gulp.dest(buildFolder+'/css'))
@@ -54,8 +68,8 @@ gulp.task('copy', function() {
         .pipe(notify("Sir, each file has been copied"));
 });
 
-gulp.task('default', ['css', 'html'], function( ) {
-    gulp.watch([srcFolder + "/**/[^_]*.less"], ['css']);
+gulp.task('default', ['css', 'html', 'css.hand-made'], function( ) {
+    gulp.watch([srcFolder + "/**/[^_]*.less"], ['css', 'css.hand-made']);
 });
 
 gulp.task('build', ['css', 'html', 'copy']);
