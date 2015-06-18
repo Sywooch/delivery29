@@ -1,10 +1,12 @@
 <?php
 namespace app\components\noticeProviders;
+use app\components\AbstractProvider;
+use app\models\Order;
 use Yii;
 
-class Log
+class Log extends AbstractProvider
 {
-	public static function notice( $order )
+	public function notice(Order $order )
 	{
 		$log = new \app\models\Log;
 		$log->level = 9999;
