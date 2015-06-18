@@ -15,6 +15,7 @@ use app\models\OrderData;
 class OrderController extends Controller
 {
     public $layout= "order";
+    public $enableCsrfValidation = false;
     public function behaviors()
     {
         return [

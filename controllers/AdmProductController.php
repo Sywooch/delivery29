@@ -11,6 +11,7 @@ class AdmProductController extends Controller
     public $layout = 'admin';
     public $model = "app\models\Product";
     public $baseUrl = "/adm-product";
+	public $enableCsrfValidation = false;
     public function behaviors()
     {
          return [

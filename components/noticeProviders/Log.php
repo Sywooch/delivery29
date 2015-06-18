@@ -8,7 +8,7 @@ class Log
 	{
 		$log = new \app\models\Log;
 		$log->level = 9999;
-		$log->message = "New order #{$order->id} was create by IP ".$_SERVER['REMOTE_ADDR'];
+		$log->message = "New order #{$order->id} was create by IP ".(isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : "local");
 		$log->save();
 	}
 }
