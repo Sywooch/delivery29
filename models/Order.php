@@ -66,7 +66,7 @@ class Order extends ActiveRecord
     public function production()
     {
         $total = 0;
-        $items = &$this->items;
+        $items = $this->items;
         foreach ($items as $item) 
         {
             $total += $item->count * $item->product->price;
