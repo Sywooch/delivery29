@@ -1,0 +1,126 @@
+@import "../../../node_modules/bootstrap/less/bootstrap.less";
+
+html, body, table, h1, h3, h2 {
+  font-family: 'Roboto', sans-serif;
+}
+
+.h-item {
+  padding: 10px;
+
+  .thumbnail {
+    max-width: 100%;
+  }
+
+  .h-link {
+    position: relative;
+    display: block;
+
+    .h-price {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      font-weight: bold;
+      background: #FFF;
+      opacity: 0.7;
+      padding: 5px 10px;
+
+      .price {
+        font-size: 20px;
+        color: #FF5555;
+      }
+
+      .old-price {
+        font-size: 18px;
+        text-decoration: line-through;
+      }
+    }
+  }
+
+  .description {
+//    display: table;
+    max-height: 146px;
+    overflow: hidden;
+  }
+
+  .btn-buy {
+    float: right;
+    margin-left: 5px;
+    margin-bottom: 5px;
+  }
+
+  .name {
+    font-size: 20px;
+    font-weight: bold;
+  }
+}
+
+.full-view-item {
+  .thumbnail {
+    max-width: 100%;
+  }
+
+  .price {
+    font-size: 20px;
+    color: #FF5555;
+    display: block;
+  }
+
+  .old-price {
+    font-size: 18px;
+    text-decoration: line-through;
+    display: block;
+  }
+
+  .btn-buy {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+.btn-back {
+  margin-bottom: 10px;
+}
+
+.gallery {
+  margin-top: 15px;
+
+  a {
+    text-decoration: none;
+  }
+
+  .thumbnail {
+    width: 100px;
+    display: inline-block;
+  }
+}
+
+.item-preview-list {
+
+  margin-bottom: 10px;
+
+  a {
+    text-decoration: none;
+    font-size: 20px;
+  }
+
+  .thumbnail {
+    width: 100px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 0;
+    margin-right: 10px;
+  }
+}
+
+.footer {
+  margin-top: 150px;
+  border-top: 1px solid #CCC;
+  padding: 50px;
+}
+
+.header {
+  padding-bottom: 25px;
+  border-bottom: 1px solid #CCC;
+  margin-bottom: 20px;
+}

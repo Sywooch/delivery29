@@ -85,7 +85,7 @@ class MediaController extends Controller
 		$media = Media::find()->where(["id"=>$id])->one();
 		if (empty($media) || $media->type != 'image')
 		{
-			throw new HttpException(404, "Media not found");
+			throw new \HttpException(404, "Media not found");
 		}
 
 		$this->normalizeSize($sizeX, $sizeY);
@@ -105,7 +105,7 @@ class MediaController extends Controller
 		$image = UploadedFile::getInstanceByName('image');
 		if (empty($image))
 		{
-			throw new HttpException(400, "Empty image");
+			throw new \HttpException(400, "Empty image");
 		}
 		$originFileName = Media::getNewOriginName('image', '_media', $image->extension);
 		$image->saveAs( Media::makePath( $originFileName ) );

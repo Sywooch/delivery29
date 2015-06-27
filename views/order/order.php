@@ -23,8 +23,12 @@ $this->title = 'Доставка Архагельск';
 				?>	
 				<tr>
 					<td>
-                        <img class="basket-category-icon" src="/img/categorys/<?php echo $item->product->category_id?>.png" alt="1"> <?php echo $item->count?> x <?php echo $item->product->name?>
-					</td>
+                        <?php if ($item->type == \app\models\OrderData::TYPE_FOOD) {?>
+                            <img class="basket-category-icon" src="/img/categorys/<?php echo $item->product->category_id?>.png" alt="1"> <?php echo $item->count?> x <?php echo $item->product->name?>
+					    <?php } else { ?>
+                            <img class="basket-category-icon" src="/img/categorys/no.png" alt="1"> <?php echo $item->count?> x <?php echo $item->product->name?>
+                        <?php } ?>
+                    </td>
 					<td>
 						<?php echo $item->count*$item->product->price;?> руб.
 					</td>

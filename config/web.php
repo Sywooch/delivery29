@@ -24,6 +24,8 @@ $config = [
                     'route' => 'static-page',
                     'defaults' => ['page' => "work"],
                 ],
+                'hand-made/order' => 'hand-made/order',
+                'hand-made/<slug>' => 'hand-made/show',
             ],
             // ...
         ],

@@ -16,13 +16,16 @@ use yii\db\ActiveRecord;
  * @property string $tel
  * @property string $address
  * @property string $comment
- * @property integer $session_id
  * @property double $total
  * @property integer $status
+ * @property integer $type
  * @property DeliveryZone $zone
+ * @property integer $session_id
  */
 class Order extends ActiveRecord
 {
+    const TYPE_FOOD = 1;
+    const TYPE_HAND_MADE = 2;
     /**
      * @inheritdoc
      */
@@ -39,7 +42,7 @@ class Order extends ActiveRecord
         return [
             [['created_at'], 'safe'],
             [['session_id', 'status', 'zone_id'], 'integer'],
-            [['total'], 'number'],
+            [['total', 'type'], 'number'],
             [['tel'], 'string', 'max' => 255],
             [['address', 'comment'], 'string', 'max' => 1024]
         ];
@@ -101,13 +104,16 @@ class Order extends ActiveRecord
         if ($this->items) {
             $place = array();
             foreach ($this->items as $item) {
+
                 /**
                  * @var OrderData $item
                  */
-                if (isset( $place[ $item->product->category_id ]))
-                    $place[ $item->product->category_id ]++;
-                else
-                    $place[ $item->product->category_id ] = 1;
+                if ($item->type == OrderData::TYPE_FOOD) {
+                    if (isset($place[$item->product->category_id]))
+                        $place[$item->product->category_id]++;
+                    else
+                        $place[$item->product->category_id] = 1;
+                }
             }
             return count($place) > 1;
         }
@@ -131,5 +137,16 @@ class Order extends ActiveRecord
      */
     public function isPromo5Order() {
         return DiscountHelper::promo5order($this->id);
+    }
+
+    public function calcTotal() {
+        $total = 0;
+        foreach($this->items as $item) {
+            /**
+             * @var OrderData $item
+             */
+            $total += $item->product->price * $item->count;
+        }
+        return $total;
     }
 }
