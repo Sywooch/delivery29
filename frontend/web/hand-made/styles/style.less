@@ -7,6 +7,10 @@ html, body, table, h1, h3, h2 {
 .h-item {
   padding: 10px;
 
+  .panel {
+    min-height: 178px;
+  }
+
   .thumbnail {
     max-width: 100%;
   }
@@ -123,4 +127,36 @@ html, body, table, h1, h3, h2 {
   padding-bottom: 25px;
   border-bottom: 1px solid #CCC;
   margin-bottom: 20px;
+}
+
+.inline-100 {
+  display: inline-block;
+  width: 100px;
+  margin: 5px;
+}
+
+.item-list {
+
+  .thumbnail {
+    max-width: 100%;
+    margin-bottom: 0;
+  }
+
+  td.image {
+    max-width: 50px;
+    text-align: center;
+  }
+
+  td.name {
+    vertical-align: middle;
+  }
+
+  td.price {
+    text-align: center;
+    vertical-align: middle;
+    span {
+      margin-bottom: 5px;
+    }
+  }
+
 }

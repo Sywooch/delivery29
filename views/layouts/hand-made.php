@@ -3,6 +3,7 @@ use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use app\assets\AppAsset;
+use yii\helpers\Url;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
@@ -26,9 +27,23 @@ AppAsset::register($this);
 </head>
 <body>
 <?php $this->beginBody() ?>
+    <?php if (!\Yii::$app->user->isGuest): ?>
+        <div>
+        <a class="btn btn-xs btn-default" href="<?=Url::to(['/hand-made/edit', "new"=>true])?>">
+            Добавить товар
+        </a>
+        </div>
+    <?php endif;?>
     <div class="container header">
-        <h1><a href="/hand-made">Украшения и аксессуары ручной работы</a><small> от доставка 29</small></h1>
-        <p>Украшения ручной работы с настоящими растениями. Бесплатная доставка по Архангельску</p>
+        <div class="col-sm-4">
+            <h1><a href="/hand-made">Украшения и аксессуары ручной работы</a><small> от <a href="/">доставка 29</a></small></h1>
+        </div>
+        <div class="col-sm-4">
+            <p style="margin-top: 26px; font-size: 16px">Украшения ручной работы с настоящими растениями, все товары сделаны только из натуральных матриалов, мы гарантируем бесплатнуб доставку по Архангельску в день заказа.</p>
+        </div>
+        <div class="col-sm-4" style="text-align: center">
+            <button id="hand-made-cart-btn" style="display:none; margin-top: 50px" class="btn btn-lg"></button>
+        </div>
     </div>
 
     <div style="min-height:100%; margin-bottom:-60px; padding-bottom:60px">
@@ -40,14 +55,13 @@ AppAsset::register($this);
             <p class="pull-left">&copy; Доставка 29. Ювелирнве украшения ручной работы  <?php echo \app\assets\ConfigHelper::getPartnerEmail();?> - контакт для партнеров</p>
         </div>
     </footer>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <?php $this->endBody() ?>
+<?php echo $this->render('hand-made-cart'); ?><!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script src="<?php echo \Yii::$app->urlManager->createUrl(['/js/mustache.min.js']); ?>"></script>
-<?php echo $this->render('delivery-zone')?>
-<script>
-    var ADD_DELIVERY_PRICE = '<?php echo Yii::$app->params['ADD_DELIVERY_PRICE']?>';
-</script>
-<script src="<?php echo \Yii::$app->urlManager->createUrl(['/js/chart.js']); ?>"></script>
+<script src="<?php echo \Yii::$app->urlManager->createUrl(['/js/plugins/jquery.maskedinput.min.js'])?>"></script>
+<script src="<?php echo \Yii::$app->urlManager->createUrl(['/js/hand-made/cart.js']); ?>"></script>
 <?php echo $this->render('counters'); ?>
 </body>
 </html>

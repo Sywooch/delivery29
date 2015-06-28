@@ -24,7 +24,9 @@ $config = [
                     'route' => 'static-page',
                     'defaults' => ['page' => "work"],
                 ],
+                'hand-made/save-item' => 'hand-made/save-item',
                 'hand-made/order' => 'hand-made/order',
+                'hand-made/edit' => 'hand-made/edit',
                 'hand-made/<slug>' => 'hand-made/show',
             ],
             // ...

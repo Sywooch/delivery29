@@ -15,6 +15,8 @@ use Yii;
  * @property string $description
  * @property string $short_description
  * @property string $slug
+ * @property integer $active
+ * @property integer $sort
  */
 class HandMadeItem extends \yii\db\ActiveRecord
 {
@@ -32,9 +34,11 @@ class HandMadeItem extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['price', 'discount', 'preview_id'], 'integer'],
+            [['price', 'discount', 'preview_id', 'active', 'sort'], 'integer'],
             [['description', 'short_description'], 'string'],
-            [['name', 'slug'], 'string', 'max' => 255]
+            [['name', 'slug'], 'string', 'max' => 255],
+            ['active', 'default', 'value'=>0],
+            ['sort', 'default', 'value'=>1],
         ];
     }
 

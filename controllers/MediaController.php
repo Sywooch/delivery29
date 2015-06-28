@@ -100,7 +100,7 @@ class MediaController extends Controller
 		$this->redirect( $media->getUrl( $sizeX, $sizeY, $ext ) );
 	}
 
-	public function actionUpload()
+	public function actionUpload($return = false, $w=100,$h=100)
 	{
 		$image = UploadedFile::getInstanceByName('image');
 		if (empty($image))
@@ -114,5 +114,33 @@ class MediaController extends Controller
 		$media->file = $originFileName;
 		$media->save();
 		echo $media->id;
+        if ($return) {
+            echo "|".$media->getUrl($w,$h);
+        }
 	}
+
+    public function actionUploadUrl($url, $w = 100, $h = 100) {
+        if (strpos($url,"http") !== 0) return -1;
+
+        $info = pathinfo($url);
+        $fileName = $info['basename'];
+        $ext = $info['extension'];
+        if (empty($fileName) || empty($ext) || !in_array($ext, ['png','jpg','jpeg',"PNG","JPG","JPEG"])) {
+            return -1;
+        }
+
+        $data = @file_get_contents($url);
+        if (empty($data)) {
+            return -1;
+        }
+        $originFileName = Media::getNewOriginName('image', '_media', $ext);
+        file_put_contents( Media::makePath($originFileName),$data);
+        $media = new Media;
+        $media->type = 'image';
+        $media->file = $originFileName;
+        $media->save();
+        echo $media->id;
+        echo "|".$media->getUrl($w,$h);
+        return "";
+    }
 }
