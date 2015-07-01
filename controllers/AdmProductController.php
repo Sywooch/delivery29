@@ -3,6 +3,7 @@ namespace app\controllers;
 
 use app\models\Media;
 use app\models\Product;
+use TrueBV\Punycode;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -127,9 +128,14 @@ class AdmProductController extends Controller
                 return -1;
             }
 
+            $Punycode = new Punycode();
+           // $url = ($Punycode->encode( strtr(trim($url), ['http://'=>''])));
+            $urlinfo = explode("/", $url);
+            $urlinfo[2] = $Punycode->encode($urlinfo[2]);
+            $url = implode('/',$urlinfo);
             $data = @file_get_contents($url);
             if (empty($data)) {
-                return -1;
+                return  print_r( explode("/", $url) );
             }
             $originFileName = Media::getNewOriginName('image', '_media', $ext);
             file_put_contents( Media::makePath($originFileName),$data);

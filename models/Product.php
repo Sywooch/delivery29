@@ -61,10 +61,10 @@ class Product extends \yii\db\ActiveRecord
         ];
     }
 
-    public function getImage($x,$y)
+    public function getImage($x,$y, $ext = 'jpg')
     {
         // $m = new Media;
-        return Media::getUrlFix( "image", $this->image_id, $x,$y);
+        return Media::getUrlFix( "image", $this->image_id, $x,$y, $ext);
     }
 
     public function getSubCategory()
