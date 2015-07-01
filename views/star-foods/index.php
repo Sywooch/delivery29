@@ -44,3 +44,19 @@ $this->title = 'Доставка еды домой и в офисы Арханг
     	chart.defaultRewrite = function () { rewriteChart(); }
 	});
 </script>
+<script src="<?php echo \Yii::$app->urlManager->createUrl(['/js/on-click-mc.js'])?>"></script>
+<div id="desktop-to-basket" class="desktop-to-basket" style="display: none">
+    <div class="visible-md visible-lg">
+        <a href="#basket" class="btn btn-success btn-wide">Перейти в корзину</a>
+    </div>
+</div>
+<?php if (!\Yii::$app->user->isGuest):?>
+    <script src="/js/admin/photo-setter.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            $('.js-set-photo-to').each( function (k,v) {
+                $(v).data('setter', new PhotoSetter( $(v) ));
+            } );
+        });
+    </script>
+<?php endif;?>

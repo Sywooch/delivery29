@@ -1,6 +1,8 @@
 <?php
 namespace app\controllers;
 
+use app\models\Media;
+use app\models\Product;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -110,6 +112,33 @@ class AdmProductController extends Controller
         else
         {
             echo $this->render('create', [ 'model'=>$this->model, 'baseUrl'=>$this->baseUrl, 'data'=>$item]);
+        }
+    }
+
+    public function actionSetPhoto($id, $url) {
+        $product = Product::find()->where(['id'=>$id])->one();
+        if ($product) {
+            if (strpos($url,"http") !== 0) return -1;
+
+            $info = pathinfo($url);
+            $fileName = $info['basename'];
+            $ext = $info['extension'];
+            if (empty($fileName) || empty($ext) || !in_array($ext, ['png','jpg','jpeg',"PNG","JPG","JPEG"])) {
+                return -1;
+            }
+
+            $data = @file_get_contents($url);
+            if (empty($data)) {
+                return -1;
+            }
+            $originFileName = Media::getNewOriginName('image', '_media', $ext);
+            file_put_contents( Media::makePath($originFileName),$data);
+            $media = new Media;
+            $media->type = 'image';
+            $media->file = $originFileName;
+            $media->save();
+            $product->image_id = $media->id;
+            $product->save();
         }
     }
 }
