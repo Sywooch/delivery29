@@ -28,7 +28,7 @@ HandMadeCart.prototype.onSubmitOrder = function (event) {
 };
 
 HandMadeCart.prototype.getFormData = function() {
-    var i,data = {};
+    var i,data = {'zone_id':-1};
     var $arInputs = this.form.find('input,textarea');
     for(i=0;i<$arInputs.length;i++) {
         var $obj = $($arInputs[i]);
