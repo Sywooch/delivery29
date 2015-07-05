@@ -43,7 +43,7 @@ function getZoneById( $zId, $zoneArray )
     $cat = array();
     foreach ($order->items as $item)
     {
-        $catId = $item->product->category_id;
+        $catId = $item->type == \app\models\OrderData::TYPE_FOOD ?  $item->product->type->category_id : -1;
         if (!empty($cat[$catId]))
         {
             $cat[ $catId ]['items'][] = $item;

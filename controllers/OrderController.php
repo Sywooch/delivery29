@@ -57,7 +57,7 @@ class OrderController extends Controller
                     $orderData->order_id = $order->id;
                     $orderData->item_id = $item['id'];
                     $orderData->count = $item['count'];
-                    $orderData->type = isset($item['type']) ? $item->type : OrderData::TYPE_FOOD;
+                    $orderData->type = isset($item['type']) ? $item['type'] : OrderData::TYPE_FOOD;
                     $orderData->save();
                 }
                 $order->production();

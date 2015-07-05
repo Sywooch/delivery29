@@ -24,7 +24,7 @@ $this->title = "Заказ №".$order->id;
                  * @var OrderData $item
                  */
                 ?>
-                <a href="<?=$item->product->getUrl()?>">
+                <a href="<?=$item->product->getUrl()?>" style="display: block">
                     <img src="<?=$item->product->getPreview(150,150)?>" class="thumbnail">
                     <span><?=$item->product->name?></span>
                 </a>

@@ -13,7 +13,97 @@ function HandMadeCart() {
     this.loadItems();
     this.renderBtns();
     this.modal.find('*[data-mask]').each(function (k,v) { $(v).mask($(v).data('mask')); });
+    this.form = this.modal.find('#order-form form');
+    this.form.submit( function (e) { self.onSubmitOrder(e); } );
 }
+
+HandMadeCart.prototype.onSubmitOrder = function (event) {
+    event.preventDefault();
+    this.formLoad();
+    if (this.formValidate()) {
+        this.sendForm( this.getFormData() );
+    } else {
+        this.formNormal();
+    }
+};
+
+HandMadeCart.prototype.getFormData = function() {
+    var i,data = {};
+    var $arInputs = this.form.find('input,textarea');
+    for(i=0;i<$arInputs.length;i++) {
+        var $obj = $($arInputs[i]);
+        data[ $obj.attr('name') ] = $obj.val();
+    }
+    data.items = [];
+    for (i = 0; i < this.items.length;i++) {
+        var item = {};
+        if (typeof this.items[i].type == "undefined") {
+            item.type = 2;
+        } else {
+            this.items[i].type;
+        }
+        item.id = this.items[i].id;
+        item.count = 1;
+        data.items.push(item);
+    }
+    return data;
+};
+
+HandMadeCart.prototype.sendForm  = function(data) {
+    var self = this;
+    $.post("/order/make", {"data": data, "_csrf":$('meta[name=csrf-token]').attr('content')}, function (data) {
+        self.removeAll();
+        window.location = "/hand-made/order/?id=" + data.response;
+    }, "json").fail(function () {
+        alert("При оформлении заказа возникла проблема, попробуйте позже");
+    }).always(function () {
+        self.formNormal();
+    });
+};
+
+HandMadeCart.prototype.removeAll = function() {
+    this.items = [];
+    this.saveItems();
+};
+
+HandMadeCart.prototype.formValidate = function () {
+    if (this.items.length == 0) {
+        alert('Ваша корзина пуста');
+        return false;
+    }
+
+    var $arInputs = this.form.find('input,textarea');
+    for(var i=0;i<$arInputs.length;i++) {
+        var $obj = $($arInputs[i]);
+        if ($obj.parent().parent().hasClass('has-error')) {
+            $obj.parent().parent().find('label').html( $obj.parent().parent().find('label').attr('old-text') );
+        }
+        $obj.parent().parent().removeClass('has-error');
+        if ($obj.data('required')) {
+            if ($obj.val() == "") {
+                $obj.parent().parent().addClass('has-error');
+                $obj.parent().parent().find('label').attr('old-text', $obj.parent().parent().find('label').html());
+                $obj.parent().parent().find('label').html( $obj.data('error-text') );
+                return false;
+            }
+        }
+    }
+    return true;
+};
+
+HandMadeCart.prototype.formLoad = function () {
+    var $btn = this.form.find('.btn');
+    $btn.attr('old-text', $btn.html());
+    $btn.html('Пожалуйста подождите..');
+    $btn.attr('disabled', 'disabled');
+};
+
+HandMadeCart.prototype.formNormal = function () {
+    var $btn = this.form.find('.btn');
+    var text = $btn.attr('old-text');
+    $btn.attr('disabled', false);
+    $btn.html(text);
+};
 
 HandMadeCart.prototype.openOrderForm = function () {
     this.modal.find('#order-form').show();

@@ -28,13 +28,13 @@
                         <div class="form-group">
                             <label for="address" class="col-sm-3 control-label">Адрес доставки</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="address" name="address" placeholder="улица дом (корпус) квартира">
+                                <input data-error-text="Введите адрес" data-required="true" type="text" class="form-control" id="address" name="address" placeholder="улица дом (корпус) квартира">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="phone" class="col-sm-3 control-label">Телефон</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="phone" data-mask="+7(999) 999 99 99" name="phone" placeholder="+7">
+                                <input data-error-text="Введите телефон" data-required="true" type="text" class="form-control" id="phone" data-mask="+7(999) 999 99 99" name="tel" placeholder="+7">
                             </div>
                         </div>
                         <div class="form-group">
