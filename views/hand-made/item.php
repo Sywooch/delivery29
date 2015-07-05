@@ -33,7 +33,7 @@ $this->title = $item->name;
             <?php endif;?>
             <p class="description"><?= $item->getDescription() ?></p>
 
-            <div class="gallery js-gallery">
+            <div class="gallery js-gallery" id="js-gallery">
                 <?php foreach ($item->images as $image): ?>
                     <?php
                     /**

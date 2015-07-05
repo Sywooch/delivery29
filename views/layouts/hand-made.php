@@ -62,7 +62,30 @@ AppAsset::register($this);
 <script src="<?php echo \Yii::$app->urlManager->createUrl(['/js/mustache.min.js']); ?>"></script>
 <script src="<?php echo \Yii::$app->urlManager->createUrl(['/js/plugins/jquery.maskedinput.min.js'])?>"></script>
 <script src="<?php echo \Yii::$app->urlManager->createUrl(['/js/hand-made/cart.js']); ?>"></script>
+<script src="<?php echo \Yii::$app->urlManager->createUrl(['/js/blueimp-gallery.min.js']); ?>"></script>
 <?php echo $this->render('counters'); ?>
+<!-- The Gallery as lightbox dialog, should be a child element of the document body -->
+<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+    <div class="slides"></div>
+    <h3 class="title"></h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="close">×</a>
+    <a class="play-pause"></a>
+    <ol class="indicator"></ol>
+</div>
+<script>
+    if (document.getElementById('js-gallery')) {
+        document.getElementById('js-gallery').onclick = function (event) {
+            event = event || window.event;
+            var target = event.target || event.srcElement,
+                link = target.src ? target.parentNode : target,
+                options = {index: link, event: event},
+                links = this.getElementsByTagName('a');
+            blueimp.Gallery(links, options);
+        };
+    }
+</script>
 </body>
 </html>
 <?php $this->endPage() ?>
