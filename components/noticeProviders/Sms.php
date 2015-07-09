@@ -50,7 +50,7 @@ class Sms extends AbstractProvider
         foreach ( $order->items as $item )
         {
             $total += $item->count * $item->product->price;
-            $catId = $item->type == \app\models\OrderData::TYPE_FOOD ?  $item->product->type->category_id : -1;
+            $catId = $item->type == \app\models\OrderData::TYPE_FOOD ?  $item->product->category_id : -1;
 
             if (empty($cat[ $catId ]))
             {
