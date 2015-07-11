@@ -67,6 +67,9 @@ if (!function_exists("isActive")) {
         ?>
     <div style="min-height:100%; margin-bottom:-60px; padding-bottom:60px">
         <div class="container">
+            <div class="panel panel error">
+                По техническим причинам доставка на осуществляется до 29 июля, приносим извинения за неудобства.
+            </div>
             <div class="col-sm-7 col-md-8 col-lg-9">
                 <ul class="nav nav-tabs">
                     <li class="<?php echo isActive('/')?>"><a class='md-button' href="/">Мак</a></li>
