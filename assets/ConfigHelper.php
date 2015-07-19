@@ -50,4 +50,22 @@ class ConfigHelper
     public static function getVer() {
         return 3;
     }
+
+    public static function disableDelivery()
+    {
+        if (isset(\Yii::$app->params['DISABLE_DELIVERY'])) {
+            return \Yii::$app->params['DISABLE_DELIVERY'] == 'Y';
+        } else {
+            return false;
+        }
+    }
+
+    public static function getDisableDeliveryText($string)
+    {
+        if (isset(\Yii::$app->params['DISABLE_DELIVERY_REASON']) && !empty(\Yii::$app->params['DISABLE_DELIVERY_REASON'])) {
+            return \Yii::$app->params['DISABLE_DELIVERY_REASON'];
+        } else {
+            return $string;
+        }
+    }
 }

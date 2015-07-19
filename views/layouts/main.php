@@ -67,11 +67,13 @@ if (!function_exists("isActive")) {
         ?>
     <div style="min-height:100%; margin-bottom:-60px; padding-bottom:60px">
         <div class="container">
-            <!--<div class="panel panel-danger">
+            <?php if (\app\assets\ConfigHelper::disableDelivery()):?>
+            <div class="panel panel-danger">
                 <div class="panel-body text-danger">
-                    По техническим причинам доставка не осуществляется до 29 июля, приносим извинения за неудобства.
+                    <?php echo \app\assets\ConfigHelper::getDisableDeliveryText("По техническим причинам доставка не осуществляется, приносим извинения за неудобства.");?>
                 </div>
-            </div>-->
+            </div>
+            <?php  endif;?>
             <div class="col-sm-7 col-md-8 col-lg-9">
                 <ul class="nav nav-tabs">
                     <li class="<?php echo isActive('/')?>"><a class='md-button' href="/">Мак</a></li>
