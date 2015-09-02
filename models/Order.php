@@ -136,7 +136,7 @@ class Order extends ActiveRecord
      * true - если это 5 заказ от клиента
      */
     public function isPromo5Order() {
-        return DiscountHelper::promo5order($this->id);
+        return false;// DiscountHelper::promo5order($this->id);
     }
 
     public function calcTotal() {
