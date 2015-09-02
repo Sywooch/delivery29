@@ -6,12 +6,12 @@
  * Time: 14:33
  */
 ?>
-<noindex>
+<!--<noindex>
     <div>
         <h3>Бесплатная доставка каждый 5 заказ</h3>
         <p>При заказе с одного номера телефона каждый 5 заказ с бесплатной доставкой!</p>
     </div>
-</noindex>
+</noindex>-->
 
 <noindex>
     <div style="text-align: center">
