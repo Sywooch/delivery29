@@ -59,14 +59,14 @@ $this->title = 'Доставка Архагельск';
 		</div>
 		<div class="col-md-6">
 			<?php if($order->isPromo5Order()): ?>
-            <noindex>
+            <!--<noindex>
             <div class="panel panel-default">
                 <div class='panel-body'>
                     <h2 style="margin-top:0">Это ваш 5 заказ</h2>
                     <p>Доставка этого заказа бесплатна, вы платите толкьо за то, что заказали</p>
                 </div>
             </div>
-            </noindex>
+            </noindex>-->
             <?php endif;?>
             <div class="panel panel-default">
 				<div class='panel-body'>
